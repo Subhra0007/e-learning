@@ -162,7 +162,6 @@ const ContactForm: React.FC<{
 ------------------------------------------------- */
 const ContactInfo: React.FC = () => (
   <div className="flex flex-col gap-8">
-    {/* Info card */}
     <div className="relative rounded-xl p-6 backdrop-blur-xl border border-white/10 overflow-hidden shadow-lg bg-paleblue">
       <div className="relative z-10">
         <h3 className="text-2xl font-semibold mb-3 text-orange-500">
@@ -190,33 +189,11 @@ const ContactInfo: React.FC = () => (
         </p>
 
         <div className="flex gap-4 mt-4 text-orange-500 text-lg">
-          <a
-            href="https://facebook.com"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <FacebookF className="cursor-pointer hover:scale-110 transition" />
-          </a>
-          <a
-            href="https://instagram.com"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Instagram className="cursor-pointer hover:scale-110 transition" />
-          </a>
-          <a href="#" target="_blank" rel="noopener noreferrer">
-            <Whatsapp className="cursor-pointer hover:scale-110 transition" />
-          </a>
-          <a href="#" target="_blank" rel="noopener noreferrer">
-            <MapMarkerAlt className="cursor-pointer hover:scale-110 transition" />
-          </a>
-          <a
-            href="https://linkedin.com"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Linkedin className="cursor-pointer hover:scale-110 transition" />
-          </a>
+          <FacebookF className="cursor-pointer hover:scale-110 transition" />
+          <Instagram className="cursor-pointer hover:scale-110 transition" />
+          <Whatsapp className="cursor-pointer hover:scale-110 transition" />
+          <MapMarkerAlt className="cursor-pointer hover:scale-110 transition" />
+          <Linkedin className="cursor-pointer hover:scale-110 transition" />
         </div>
       </div>
     </div>
@@ -301,9 +278,7 @@ const ContactUs: React.FC = () => {
 
   return (
     <section className="relative bg-slate-100 text-black px-6 pt-10 overflow-hidden lg:px-0">
-      {/* GRID CONTAINER */}
       <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8">
-        {/* LEFT – FORM */}
         <ContactForm
           formData={formData}
           handleChange={handleChange}
@@ -311,8 +286,6 @@ const ContactUs: React.FC = () => {
           loading={loading}
           responseMessage={responseMessage}
         />
-
-        {/* RIGHT – INFO + MAP */}
         <ContactInfo />
       </div>
     </section>

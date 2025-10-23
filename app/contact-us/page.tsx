@@ -16,7 +16,9 @@ import {
 
 const CallOutline = IoCallOutline as React.FC<React.SVGProps<SVGSVGElement>>;
 const MailOutline = IoMailOutline as React.FC<React.SVGProps<SVGSVGElement>>;
-const LocationOutline = IoLocationOutline as React.FC<React.SVGProps<SVGSVGElement>>;
+const LocationOutline = IoLocationOutline as React.FC<
+  React.SVGProps<SVGSVGElement>
+>;
 const FacebookF = FaFacebookF as React.FC<React.SVGProps<SVGSVGElement>>;
 const Instagram = FaInstagram as React.FC<React.SVGProps<SVGSVGElement>>;
 const Whatsapp = FaWhatsapp as React.FC<React.SVGProps<SVGSVGElement>>;
@@ -35,11 +37,13 @@ interface FormData {
 
 /* -------------------------------------------------
    CONTACT FORM
-   ------------------------------------------------- */
+------------------------------------------------- */
 const ContactForm: React.FC<{
   formData: FormData;
   handleChange: (
-    e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
+    e: ChangeEvent<
+      HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
+    >
   ) => void;
   handleSubmit: (e: FormEvent<HTMLFormElement>) => void;
   loading: boolean;
@@ -105,7 +109,7 @@ const ContactForm: React.FC<{
       {/* Courses */}
       <div>
         <label className="block mb-1 text-sm font-medium text-black">
-          Courses you're interested in
+          Courses you&apos;re interested in
         </label>
         <select
           name="courses"
@@ -155,12 +159,11 @@ const ContactForm: React.FC<{
 
 /* -------------------------------------------------
    CONTACT INFO + MAP
-   ------------------------------------------------- */
+------------------------------------------------- */
 const ContactInfo: React.FC = () => (
   <div className="flex flex-col gap-8">
     {/* Info card */}
     <div className="relative rounded-xl p-6 backdrop-blur-xl border border-white/10 overflow-hidden shadow-lg bg-paleblue">
-
       <div className="relative z-10">
         <h3 className="text-2xl font-semibold mb-3 text-orange-500">
           Contact Information
@@ -187,10 +190,18 @@ const ContactInfo: React.FC = () => (
         </p>
 
         <div className="flex gap-4 mt-4 text-orange-500 text-lg">
-          <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">
+          <a
+            href="https://facebook.com"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <FacebookF className="cursor-pointer hover:scale-110 transition" />
           </a>
-          <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
+          <a
+            href="https://instagram.com"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <Instagram className="cursor-pointer hover:scale-110 transition" />
           </a>
           <a href="#" target="_blank" rel="noopener noreferrer">
@@ -199,7 +210,11 @@ const ContactInfo: React.FC = () => (
           <a href="#" target="_blank" rel="noopener noreferrer">
             <MapMarkerAlt className="cursor-pointer hover:scale-110 transition" />
           </a>
-          <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
+          <a
+            href="https://linkedin.com"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <Linkedin className="cursor-pointer hover:scale-110 transition" />
           </a>
         </div>
@@ -224,7 +239,7 @@ const ContactInfo: React.FC = () => (
 
 /* -------------------------------------------------
    MAIN COMPONENT – GRID LAYOUT
-   ------------------------------------------------- */
+------------------------------------------------- */
 const ContactUs: React.FC = () => {
   const [formData, setFormData] = useState<FormData>({
     name: "",
@@ -240,7 +255,9 @@ const ContactUs: React.FC = () => {
   const [responseMessage, setResponseMessage] = useState("");
 
   const handleChange = (
-    e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
+    e: ChangeEvent<
+      HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
+    >
   ) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));

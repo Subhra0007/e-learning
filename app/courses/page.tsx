@@ -92,7 +92,7 @@ export default function CoursesGrid() {
                         Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
                 </div>
 
-                <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+                <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 mb-10 pb-3">
                     {postData.map((items, i) => (
                         <div key={i} className='bg-paleblue shadow-md rounded-2xl hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 p-6'>
                             <div className="relative overflow-hidden rounded-2xl">
@@ -169,6 +169,7 @@ export default function CoursesGrid() {
                         </div>
                     ))}
                 </div>
+                <hr />
             </div>
         </div>
     );

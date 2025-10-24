@@ -31,16 +31,27 @@ const Navbar = () => {
             <div className="flex flex-1 items-center sm:items-stretch sm:justify-start">
               {/* LOGO */}
               <div className="flex flex-shrink-0 items-center">
-                <img
-                  className="block h-12 w-20 lg:hidden"
-                  src="/logo.png"
-                  alt="dsign-logo"
-                />
-                <img
-                  className="hidden  h-12 w-20  lg:block"
-                  src="/logo.png"
-                  alt="dsign-logo"
-                />
+                <Link href="/" className="flex items-center">
+                          <Image
+                            src="/logo.png"
+                            alt="Logo"
+                            width={60}
+                            height={60}
+                            className="h-14 w-auto block lg:hidden"
+                            priority
+                          />
+                        </Link>
+                        <Link href="/" className="flex items-center">
+                         <Image
+                            src="/logo.png"
+                            alt="Logo"
+                            width={60}
+                            height={60}
+                            className="h-14 w-auto hidden  lg:block"
+                            priority
+                          />
+                        </Link>
+                
               </div>
 
               {/* LINKS */}

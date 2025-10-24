@@ -96,11 +96,11 @@ export default function MultipleItems() {
   };
 
   return (
-    <div className='max-w-7xl mx-auto px-6 pt-5'>
+    <div className='max-w-7xl mx-auto px-6 pt-20'>
     <div className=" bg-paleblue  rounded-xl p-6" id="mentor">
       <div className="sm:py-4 px-6 lg:px-8 relative">
         <h2 className="lh-82 text-midnightblue text-4xl md:text-55xl text-center md:text-start font-semibold">
-          Meet with our <br /> mentor.
+          Meet with our mentor.
         </h2>
 
         <Slider {...settings}>

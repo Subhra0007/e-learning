@@ -53,30 +53,17 @@ const Home: React.FC = () => {
   ];
 
   return (
-    <div className="max-w-7xl mx-auto pt-20">
-    <div className=" bg-gray-900 text-gray-200 flex flex-col items-center justify-center ">
-      {/* Header */}
-      <header className="text-center mb-12  px-6">
-         <h2 className="text-3xl md:text-4xl font-semibold text-gray-900 text-center">
-        Why{" "}
-        <span className=" text-Blueviolet ">
-         Choose {" "}
-        </span>
-        Us
-      </h2>
-      <p className="text-gray-500 mt-6 max-w-2xl text-sm md:text-base text-center mx-auto ">
-       Lorem Ipsum is simply dummy text of the printing and typesetting industry. It has survived not only five centuries but also the leap into electronic typesetting.
-      </p>
+    <div className="max-w-7xl mx-auto ">
+    <div className="  flex flex-col items-center justify-center  pt-6">
+    
 
-      </header>
-<WhyChooseUs/>
       {/* Counter Cards Section */}
-      <div ref={triggerRef} className="w-full px-6 mb-16 pt-10">
-        <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 text-center max-w-5xl mx-auto">
+      <div ref={triggerRef} className="w-full   bg-semiblueviolet  shadow-md rounded-xl py-6 hover:shadow-lg transition">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 text-center max-w-5xl mx-auto">
           {statsData.map((item, i) => (
             <div
               key={i}
-              className="bg-semiblueviolet  shadow-md rounded-xl py-6 hover:shadow-lg transition"
+              className=""
             >
               <h3 className="text-3xl font-bold text-teal-400">
                 <Counter target={item.target} start={inView} />

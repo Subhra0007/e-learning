@@ -49,7 +49,7 @@ const ContactForm: React.FC<{
   loading: boolean;
   responseMessage: string;
 }> = ({ formData, handleChange, handleSubmit, loading, responseMessage }) => (
-  <div className="bg-semiblueviolet rounded-xl p-6 sm:p-8 shadow-lg text-black">
+  <div className="bg-semiblueviolet rounded-xl p-6  shadow-lg text-black">
     <form className="space-y-6" onSubmit={handleSubmit}>
       {/* Name + Email */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -277,8 +277,8 @@ const ContactUs: React.FC = () => {
   };
 
   return (
-    <section className="relative bg-slate-100 text-black px-6 pt-10 overflow-hidden lg:px-0">
-      <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8">
+    <section className="relative bg-slate-100 text-black px-6 pt-10 overflow-hidden lg:px-0 max-w-7xl mx-auto">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-10 pb-3">
         <ContactForm
           formData={formData}
           handleChange={handleChange}
@@ -287,7 +287,10 @@ const ContactUs: React.FC = () => {
           responseMessage={responseMessage}
         />
         <ContactInfo />
+        
       </div>
+     <hr/>
+      
     </section>
   );
 };

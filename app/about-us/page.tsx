@@ -266,6 +266,7 @@ const SkillsSection: FC = () => {
           < Partners/>
         </div>
       </div>
+      
     </section>
   );
 };

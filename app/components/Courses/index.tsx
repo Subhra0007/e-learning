@@ -168,7 +168,7 @@ export default class MultipleItems extends Component {
 
               return (
                 <div key={i} className="px-4 py-4">
-                  <div className="bg-white p-6 shadow-md rounded-2xl hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 h-[500px] flex flex-col justify-between w-full">
+                  <div className="bg-white p-6 shadow-md rounded-2xl hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 lg:h-[500px] h-full flex flex-col justify-between w-full">
                     {/* Main Content */}
                     <div
                       className={`grid grid-cols-1 lg:grid-cols-3 gap-6 ${bgColor} p-6 rounded-2xl flex-grow`}

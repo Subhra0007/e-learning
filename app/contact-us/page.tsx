@@ -111,7 +111,7 @@ const ContactForm: React.FC<{
         </div>
 
         {/* Country Code + Contact */}
-        <div className="grid grid-cols-3 md:grid-cols-4 gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <div className="col-span-1">
             <PhoneInput
               country={"in"}

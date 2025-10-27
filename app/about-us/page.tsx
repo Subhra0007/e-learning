@@ -3,7 +3,7 @@
 import React, { useEffect, useState, useRef, FC } from 'react';
 import Image from 'next/image';
 import dynamic from 'next/dynamic';
-import studyImg from '@/public/assets/3.jpg';
+import studyImg from '@/public/assets/about-page/3.jpg';
 import { GraduationCap, Gem, Medal, Code } from 'lucide-react';
 import { FaBullseye, FaEye } from 'react-icons/fa';
 

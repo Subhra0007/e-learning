@@ -3,7 +3,9 @@ import Slider from "react-slick";
 import React, { Component } from "react";
 import { StarIcon } from "@heroicons/react/24/solid";
 import Image from "next/image";
-
+import Image1 from "@/public/assets/testimonial/images1.jpg"
+import Image2 from "@/public/assets/testimonial/images2.jpg"
+import Image3 from "@/public/assets/testimonial/images3.jpg"
 // ======================
 // CAROUSEL DATA
 // ======================
@@ -20,21 +22,21 @@ const postData: DataType[] = [
     profession: "CEO, Parkview Int.Ltd",
     comment:
       "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour",
-    imgSrc: "/assets/testimonial/user.svg",
+    imgSrc:"/assets/testimonial/user.svg" ,
   },
   {
     name: "Leslie Alexander",
     profession: "CEO, Parkview Int.Ltd",
     comment:
       "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour",
-    imgSrc: "/assets/mentor/user2.png",
+    imgSrc: "/assets/mentor/user1.png",
   },
   {
     name: "Cody Fisher",
     profession: "CEO, Parkview Int.Ltd",
     comment:
       "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour",
-    imgSrc: "/assets/mentor/user3.png",
+    imgSrc: "/assets/testimonial/user.svg",
   },
   {
     name: "Robert Fox",
@@ -48,14 +50,14 @@ const postData: DataType[] = [
     profession: "CEO, Parkview Int.Ltd",
     comment:
       "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour",
-    imgSrc: "/assets/mentor/user2.png",
+    imgSrc: "/assets/testimonial/user.svg",
   },
   {
     name: "Cody Fisher",
     profession: "CEO, Parkview Int.Ltd",
     comment:
       "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour",
-    imgSrc: "/assets/mentor/user3.png",
+    imgSrc: "/assets/mentor/user1.png",
   },
 ];
 
@@ -114,12 +116,12 @@ export default class MultipleItems extends Component {
       <div className="pt-20 " id="testimonial">
        
             <h3 className="mb-5 text-3xl md:text-4xl font-semibold text-gray-900 text-center">Testimonials</h3>
-          <Slider {...settings}>
+          <Slider {...settings} className="py-6">
             {postData.map((items, i) => (
               <div key={i}>
                 <div
-  className={`bg-white m-4 p-6 mt-20 mb-2 relative border border-white/10 rounded-xl shadow-md w-[320px] h-[360px] flex flex-col justify-between ${
-    i % 2 ? "middleDiv" : "testimonial-shadow"
+  className={`bg-white m-4 p-6 mt-20 mb-2 relative border border-white/10 rounded-xl shadow-md w-[320px] h-[320px]  flex flex-col justify-between ${
+    i % 2 ? "middleDiv" : "testimonial-shadow "
   }`}
 >
 

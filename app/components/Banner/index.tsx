@@ -16,7 +16,7 @@ const Banner = () => {
                         <h1 className='text-midnightblue text-4xl sm:text-5xl font-semibold text-center lg:text-start lh-120 pt-5 lg:pt-0'>Advance your engineering skills with us.</h1>
                         <h3 className='text-charcoal text-lg font-normal text-center lg:text-start opacity-75 pt-5 lg:pt-0'>Build skills with our courses and mentor from world-class companies.</h3>
 
-                        <div className="relative text-white focus-within:text-white flex flex-row input-shadow rounded-full pt-5 lg:pt-0 gap-5 pb-1 lg:justify-start justify-center">
+                        <div className="relative text-white focus-within:text-white flex flex-row input-shadow rounded-full pt-5 lg:pt-0 gap-10 lg:gap-5 pb-1 lg:justify-start justify-center">
                              <Link href="/contact-us">
                            <button className="text-Blueviolet text-lg font-medium py-4 px-6 transition duration-150 ease-in-out rounded-full bg-semiblueviolet hover:text-white hover:bg-Blueviolet"> 
                             Register </button>

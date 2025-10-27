@@ -39,11 +39,11 @@ hr {
 .underline-links::before {
     content: "";
     position: absolute;
-    left: 34%;
+    left: 50%;
     bottom: 16px;
     margin-top: 10px;
     bottom: 16%;
-    width: 30px;
+    width: 70%;
     height: 5px;
     border-radius: 50px;
     transform: skew(-12deg) translateX(-50%);
@@ -174,4 +174,51 @@ hr {
     border-radius: 20px;
 }
 
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    filter: drop-shadow(0 0 6px rgba(0, 255, 140, 0.3));
+  }
+  50% {
+    transform: scale(1.1);
+    filter: drop-shadow(0 0 14px rgba(0, 255, 140, 0.6));
+  }
+  100% {
+    transform: scale(1);
+    filter: drop-shadow(0 0 6px rgba(0, 255, 140, 0.3));
+  }
+}
 
+.whatsapp-pulse {
+  animation: pulse 1.8s infinite ease-in-out;
+}
+/* Fix spacing between flag and dial code */
+.react-tel-input .flag-dropdown {
+  border-radius: 8px 0 0 8px !important;
+}
+
+.react-tel-input .selected-flag {
+  background: #fff !important;
+  border-right: 1px solid #ddd !important;
+  padding: 0 10px !important;
+}
+
+.react-tel-input .selected-flag .flag {
+  margin-right: 8px !important; /* 👈 adds space between flag and code */
+}
+
+.react-tel-input .country-list {
+  color: #000 !important;
+}
+
+/* Ensure consistent height and rounded edges */
+.react-tel-input .form-control {
+  width: 100% !important;
+  height: 48px !important;
+  border-radius: 8px !important;
+  font-size: 16px !important;
+  padding-left: 60px !important;
+  background: #f9fafb !important;
+  color: #000 !important;
+  border: 1px solid #e5e7eb !important;
+}

@@ -3,9 +3,8 @@ import nodemailer from "nodemailer";
 interface ContactFormData {
   name: string;
   email: string;
-  contact: string;
   countryCode: string;
-  address: string;
+  contact: string;
   courses: string;
   message: string;
 }
@@ -15,64 +14,91 @@ export async function POST(req: Request): Promise<Response> {
     const {
       name,
       email,
-      contact,
       countryCode,
-      address,
+      contact,
       courses,
       message,
     }: ContactFormData = await req.json();
 
     // ✅ Validate required fields
-    if (!name || !email || !contact || !address || !courses || !message) {
+    if (!name || !email || !countryCode || !contact || !courses || !message) {
       return new Response(
         JSON.stringify({ error: "Missing required fields" }),
         { status: 400 }
       );
     }
 
+    // ✅ Validate email format
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+      return new Response(
+        JSON.stringify({ error: "Invalid email format" }),
+        { status: 400 }
+      );
+    }
+
+    // ✅ Check environment variables
+    const {
+      EMAIL_HOST,
+      EMAIL_PORT,
+      EMAIL_USER,
+      EMAIL_PASS,
+      CONTACT_EMAIL_TO,
+    } = process.env;
+
+    if (
+      !EMAIL_HOST ||
+      !EMAIL_PORT ||
+      !EMAIL_USER ||
+      !EMAIL_PASS ||
+      !CONTACT_EMAIL_TO
+    ) {
+      return new Response(
+        JSON.stringify({ error: "Server email configuration missing" }),
+        { status: 500 }
+      );
+    }
+
     // ✅ Configure transporter
     const transporter = nodemailer.createTransport({
-      host: process.env.EMAIL_HOST,
-      port: parseInt(process.env.EMAIL_PORT || "465"),
-      secure: true, // true for port 465, false for 587
+      host: EMAIL_HOST,
+      port: parseInt(EMAIL_PORT),
+      secure: parseInt(EMAIL_PORT) === 465, // true for port 465, false otherwise
       auth: {
-        user: process.env.EMAIL_USER,
-        pass: process.env.EMAIL_PASS,
+        user: EMAIL_USER,
+        pass: EMAIL_PASS,
       },
     });
 
     // ✅ Email content
     const mailOptions = {
-      from: process.env.EMAIL_USER,
-      to: process.env.CONTACT_EMAIL_TO,
+      from: EMAIL_USER,
+      to: CONTACT_EMAIL_TO,
       subject: `New Inquiry from ${name}`,
       html: `
         <h2>🚀 New Contact Form Submission</h2>
         <p><strong>Name:</strong> ${name}</p>
         <p><strong>Email:</strong> ${email}</p>
-        <p><strong>Contact:</strong> ${countryCode} ${contact}</p>
-        <p><strong>Address:</strong> ${address}</p>
+        <p><strong>Country Code:</strong> ${countryCode}</p>
+        <p><strong>Contact:</strong> ${contact}</p>
         <p><strong>Interested Course:</strong> ${courses}</p>
-        <p><strong>Message Details:</strong> ${message}</p>
+        <p><strong>Message:</strong> ${message}</p>
       `,
     };
 
-    // ✅ Send mail
+    // ✅ Send the email
     await transporter.sendMail(mailOptions);
 
     return new Response(
-      JSON.stringify({
-        success: true,
-        message: "Mail sent successfully!",
-      }),
+      JSON.stringify({ success: true, message: "Mail sent successfully!" }),
       { status: 200 }
     );
-  } catch (error: any) {
-    console.error("Mail Error:", error);
+  } catch (err: any) {
+    console.error("Mail Error:", err);
     return new Response(
       JSON.stringify({
         success: false,
-        error: error.message || "Unknown error",
+        error: err.message || "Unknown error",
         message: "Failed to send email.",
       }),
       { status: 500 }

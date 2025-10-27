@@ -15,10 +15,10 @@ interface DataType {
 const postData: DataType[] = [
   { profession: 'Senior UX Designer', name: 'Shoo Thar Mien', imgSrc: '/assets/mentor/user3.png' },
   { profession: 'Senior UX Designer', name: 'Shoo Thar Mien', imgSrc: '/assets/mentor/user2.png' },
-  { profession: 'Senior UX Designer', name: 'Shoo Thar Mien', imgSrc: '/assets/mentor/user1.png' },
   { profession: 'Senior UX Designer', name: 'Shoo Thar Mien', imgSrc: '/assets/mentor/user3.png' },
   { profession: 'Senior UX Designer', name: 'Shoo Thar Mien', imgSrc: '/assets/mentor/user2.png' },
-  { profession: 'Senior UX Designer', name: 'Shoo Thar Mien', imgSrc: '/assets/mentor/user1.png' },
+  { profession: 'Senior UX Designer', name: 'Shoo Thar Mien', imgSrc: '/assets/mentor/user3.png' },
+  { profession: 'Senior UX Designer', name: 'Shoo Thar Mien', imgSrc: '/assets/mentor/user2.png' },
 ];
 
 // ======================
@@ -97,11 +97,16 @@ export default function MultipleItems() {
 
   return (
     <div className='max-w-7xl mx-auto px-6 pt-20'>
+         <h2 className="text-3xl md:text-4xl font-semibold text-gray-900 text-center mb-10">
+                Meet Our{" "}
+                <span className=" text-Blueviolet ">
+                 Mentors{" "}
+                </span>
+                
+              </h2>
     <div className=" bg-paleblue  rounded-xl p-6" id="mentor">
       <div className="sm:py-4 px-6 lg:px-8 relative">
-        <h2 className="lh-82 text-midnightblue text-4xl md:text-55xl text-center md:text-start font-semibold">
-          Meet with our mentor.
-        </h2>
+      
 
         <Slider {...settings}>
           {postData.map((item, i) => (

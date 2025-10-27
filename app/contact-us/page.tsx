@@ -1,6 +1,8 @@
 "use client";
 
-import React, { useState, ChangeEvent, FormEvent } from "react";
+import React, { useState, FormEvent } from "react";
+import PhoneInput from "react-phone-input-2";
+import "react-phone-input-2/lib/style.css";
 import {
   IoCallOutline,
   IoMailOutline,
@@ -14,107 +16,149 @@ import {
   FaLinkedinIn,
 } from "react-icons/fa";
 
+/* =====================
+   ICON COMPONENTS
+===================== */
 const CallOutline = IoCallOutline as React.FC<React.SVGProps<SVGSVGElement>>;
 const MailOutline = IoMailOutline as React.FC<React.SVGProps<SVGSVGElement>>;
-const LocationOutline = IoLocationOutline as React.FC<
-  React.SVGProps<SVGSVGElement>
->;
+const LocationOutline =
+  IoLocationOutline as React.FC<React.SVGProps<SVGSVGElement>>;
 const FacebookF = FaFacebookF as React.FC<React.SVGProps<SVGSVGElement>>;
 const Instagram = FaInstagram as React.FC<React.SVGProps<SVGSVGElement>>;
 const Whatsapp = FaWhatsapp as React.FC<React.SVGProps<SVGSVGElement>>;
 const MapMarkerAlt = FaMapMarkerAlt as React.FC<React.SVGProps<SVGSVGElement>>;
 const Linkedin = FaLinkedinIn as React.FC<React.SVGProps<SVGSVGElement>>;
 
+/* =====================
+   FORM DATA INTERFACE
+===================== */
 interface FormData {
   name: string;
   email: string;
-  contact: string;
   countryCode: string;
-  address: string;
+  contact: string;
   courses: string;
   message: string;
 }
 
-/* -------------------------------------------------
+/* =====================
    CONTACT FORM
-------------------------------------------------- */
+===================== */
 const ContactForm: React.FC<{
   formData: FormData;
-  handleChange: (
-    e: ChangeEvent<
-      HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
-    >
-  ) => void;
+  setFormData: React.Dispatch<React.SetStateAction<FormData>>;
   handleSubmit: (e: FormEvent<HTMLFormElement>) => void;
   loading: boolean;
   responseMessage: string;
-}> = ({ formData, handleChange, handleSubmit, loading, responseMessage }) => (
-  <div className="bg-semiblueviolet rounded-xl p-6  shadow-lg text-black">
-    <form className="space-y-6" onSubmit={handleSubmit}>
-      {/* Name + Email */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-        <input
-          type="text"
-          name="name"
-          placeholder="Full Name"
-          value={formData.name}
-          onChange={handleChange}
-          required
-          className="p-3 rounded bg-gray-800 text-black placeholder-black focus:ring-2 focus:ring-Blueviolet outline-none"
-        />
-        <input
-          type="email"
-          name="email"
-          placeholder="Email"
-          value={formData.email}
-          onChange={handleChange}
-          required
-          className="p-3 rounded bg-gray-800 text-black placeholder-black focus:ring-2 focus:ring-Blueviolet outline-none"
-        />
-      </div>
+}> = ({ formData, setFormData, handleSubmit, loading, responseMessage }) => {
+  const [emailError, setEmailError] = useState("");
 
-      {/* Country code + Phone */}
-      <div className="flex gap-3">
-        <input
-          type="text"
-          name="countryCode"
-          placeholder="Code"
-          value={formData.countryCode}
-          onChange={handleChange}
-          required
-          className="w-1/5 p-3 rounded bg-gray-800 text-black placeholder-black focus:ring-2 focus:ring-Blueviolet outline-none"
-        />
-        <input
-          type="tel"
-          name="contact"
-          placeholder="Contact or WhatsApp Number"
-          value={formData.contact}
-          onChange={handleChange}
-          required
-          className="w-4/5 p-3 rounded bg-gray-800 text-black placeholder-black focus:ring-2 focus:ring-Blueviolet outline-none"
-        />
-      </div>
+  const handleEmailChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const { value } = e.target;
+    setFormData((prev) => ({ ...prev, email: value }));
 
-      {/* Address */}
-      <input
-        type="text"
-        name="address"
-        placeholder="Enter Address"
-        value={formData.address}
-        onChange={handleChange}
-        required
-        className="w-full p-3 rounded bg-gray-800 text-black placeholder-black focus:ring-2 focus:ring-Blueviolet outline-none"
-      />
+    const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    setEmailError(regex.test(value) ? "" : "Please enter a valid email");
+  };
 
-      {/* Courses */}
-      <div>
-        <label className="block mb-1 text-sm font-medium text-black">
-          Courses you&apos;re interested in
-        </label>
+  return (
+    <div className="bg-semiblueviolet rounded-xl p-6 shadow-lg text-black">
+      <form className="space-y-6" onSubmit={handleSubmit}>
+        {/* Name + Email */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <input
+            type="text"
+            name="name"
+            placeholder="Full Name"
+            value={formData.name}
+            onChange={(e) =>
+              setFormData((prev) => ({ ...prev, name: e.target.value }))
+            }
+            required
+            className="p-3 rounded bg-gray-800 text-black placeholder-black focus:ring-2 focus:ring-Blueviolet outline-none"
+          />
+          <div className="flex flex-col">
+            <input
+              type="email"
+              name="email"
+              placeholder="Email"
+              value={formData.email}
+              onChange={handleEmailChange}
+              required
+              className={`p-3 rounded bg-gray-800 text-black placeholder-black focus:ring-2 focus:ring-Blueviolet outline-none ${
+                emailError ? "border-red-500 border" : ""
+              }`}
+            />
+            {emailError && (
+              <span className="text-red-500 text-sm mt-1">{emailError}</span>
+            )}
+          </div>
+        </div>
+
+        {/* Country Code + Contact */}
+        <div className="grid grid-cols-3 md:grid-cols-4 gap-4">
+          <div className="col-span-1">
+            <PhoneInput
+              country={"in"}
+              value={formData.countryCode}
+              onChange={(code) =>
+                setFormData((prev) => ({ ...prev, countryCode: code }))
+              }
+              inputProps={{
+                name: "countryCode",
+                required: true,
+                className:
+                  "w-full p-3 rounded bg-gray-800 text-black placeholder-black focus:ring-2 focus:ring-Blueviolet outline-none",
+              }}
+              enableSearch
+              countryCodeEditable
+                containerStyle={{
+    width: "100%",
+  }}
+  buttonStyle={{
+    backgroundColor: "#fff",
+    border: "1px solid #d1d5db", // Tailwind gray-300
+    borderRight: "none",
+    borderRadius: "8px 0 0 8px",
+    padding: "0 10px",
+  }}
+  inputStyle={{
+    width: "100%",
+    height: "48px",
+    border: "1px solid #d1d5db",
+    borderRadius: "0 8px 8px 0",
+    paddingLeft: "65px", // gives space between flag and code
+    fontSize: "16px",
+    backgroundColor: "#fff",
+    color: "#000",
+  }}
+  dropdownStyle={{
+    color: "#000",
+  }}
+            />
+          </div>
+          <div className="col-span-2 md:col-span-3">
+            <input
+              type="tel"
+              name="contact"
+              placeholder="Contact or WhatsApp Number"
+              value={formData.contact}
+              onChange={(e) =>
+                setFormData((prev) => ({ ...prev, contact: e.target.value }))
+              }
+              required
+              className="w-full p-3 rounded bg-gray-800 text-black placeholder-black focus:ring-2 focus:ring-Blueviolet outline-none"
+            />
+          </div>
+        </div>
+
+        {/* Courses */}
         <select
           name="courses"
           value={formData.courses}
-          onChange={handleChange}
+          onChange={(e) =>
+            setFormData((prev) => ({ ...prev, courses: e.target.value }))
+          }
           className="w-full p-3 rounded bg-gray-800 text-black focus:ring-2 focus:ring-Blueviolet outline-none"
         >
           <option>Complete Digital Marketing Course</option>
@@ -125,41 +169,43 @@ const ContactForm: React.FC<{
           <option>Advanced React & Next.js Development</option>
           <option>Content Writing Masterclass</option>
         </select>
-      </div>
 
-      {/* Message */}
-      <textarea
-        name="message"
-        rows={4}
-        value={formData.message}
-        onChange={handleChange}
-        placeholder="Briefly describe your message"
-        className="w-full p-3 rounded bg-gray-800 text-black placeholder-black focus:ring-2 focus:ring-Blueviolet outline-none"
-      />
+        {/* Message */}
+        <textarea
+          name="message"
+          rows={4}
+          value={formData.message}
+          onChange={(e) =>
+            setFormData((prev) => ({ ...prev, message: e.target.value }))
+          }
+          placeholder="Briefly describe your message"
+          className="w-full p-3 rounded bg-gray-800 text-black placeholder-black focus:ring-2 focus:ring-Blueviolet outline-none"
+        />
 
-      {/* Submit */}
-      <div className="flex justify-center">
-        <button
-          type="submit"
-          disabled={loading}
-          className="py-2 px-8 bg-grey500 text-black font-semibold rounded-full shadow-lg shadow-black/50 hover:brightness-110 transition"
-        >
-          {loading ? "Submitting..." : "Submit"}
-        </button>
-      </div>
+        {/* Submit */}
+        <div className="flex justify-center">
+          <button
+            type="submit"
+            disabled={loading || emailError !== ""}
+            className="py-2 px-8 text-lg text-Blueviolet rounded-full font-medium shadow hover:brightness-110 transition border border-lightgray hover:bg-white"
+          >
+            {loading ? "Submitting..." : "Submit"}
+          </button>
+        </div>
 
-      {responseMessage && (
-        <p className="text-center text-sm mt-4 font-medium text-black">
-          {responseMessage}
-        </p>
-      )}
-    </form>
-  </div>
-);
+        {responseMessage && (
+          <p className="text-center text-sm mt-4 font-medium text-black">
+            {responseMessage}
+          </p>
+        )}
+      </form>
+    </div>
+  );
+};
 
-/* -------------------------------------------------
+/* =====================
    CONTACT INFO + MAP
-------------------------------------------------- */
+===================== */
 const ContactInfo: React.FC = () => (
   <div className="flex flex-col gap-8">
     <div className="relative rounded-xl p-6 backdrop-blur-xl border border-white/10 overflow-hidden shadow-lg bg-paleblue">
@@ -171,15 +217,15 @@ const ContactInfo: React.FC = () => (
 
         <p className="flex items-center gap-2 mt-3 text-gray-300">
           <CallOutline />
-          <a href="tel:+911234567890" className="hover:underline">
-            +91 1234567890
+          <a href="tel:+91 7073437393" className="hover:underline">
+            +91 7073437393
           </a>
         </p>
 
         <p className="flex items-center gap-2 mt-3 text-gray-300">
           <MailOutline />
-          <a href="mailto:abc@gmail.com" className="hover:underline">
-            abc@gmail.com
+          <a href="mailto:tutor4study24x7@gmail.com" className="hover:underline">
+            tutor4study24x7@gmail.com
           </a>
         </p>
 
@@ -198,7 +244,6 @@ const ContactInfo: React.FC = () => (
       </div>
     </div>
 
-    {/* Map */}
     <div className="rounded-xl overflow-hidden border border-white/10 shadow-lg">
       <iframe
         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d96896.92852121097!2d72.94814097660938!3d26.27033588207035!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39418c4eaa06ccb9%3A0x8114ea5b0ae1abb8!2sJodhpur%2C%20Rajasthan!5e1!3m2!1sen!2sin!4v1760699599943!5m2!1sen!2sin"
@@ -214,31 +259,21 @@ const ContactInfo: React.FC = () => (
   </div>
 );
 
-/* -------------------------------------------------
-   MAIN COMPONENT – GRID LAYOUT
-------------------------------------------------- */
+/* =====================
+   MAIN COMPONENT
+===================== */
 const ContactUs: React.FC = () => {
   const [formData, setFormData] = useState<FormData>({
     name: "",
     email: "",
-    contact: "",
     countryCode: "+91",
-    address: "",
+    contact: "",
     courses: "Complete Digital Marketing Course",
     message: "",
   });
 
   const [loading, setLoading] = useState(false);
   const [responseMessage, setResponseMessage] = useState("");
-
-  const handleChange = (
-    e: ChangeEvent<
-      HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
-    >
-  ) => {
-    const { name, value } = e.target;
-    setFormData((prev) => ({ ...prev, [name]: value }));
-  };
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -259,9 +294,8 @@ const ContactUs: React.FC = () => {
         setFormData({
           name: "",
           email: "",
-          contact: "",
           countryCode: "+91",
-          address: "",
+          contact: "",
           courses: "Complete Digital Marketing Course",
           message: "",
         });
@@ -281,16 +315,14 @@ const ContactUs: React.FC = () => {
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-10 pb-3">
         <ContactForm
           formData={formData}
-          handleChange={handleChange}
+          setFormData={setFormData}
           handleSubmit={handleSubmit}
           loading={loading}
           responseMessage={responseMessage}
         />
         <ContactInfo />
-        
       </div>
-     <hr/>
-      
+      <hr />
     </section>
   );
 };

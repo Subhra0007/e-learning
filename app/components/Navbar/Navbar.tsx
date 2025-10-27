@@ -2,6 +2,7 @@
 import { Disclosure } from '@headlessui/react';
 import { useState } from "react";
 import { usePathname } from "next/navigation";
+import Logo from "@/public/logo.png"
 import Link from 'next/link';
 import { Bars3Icon } from '@heroicons/react/24/outline';
 import Drawer from "./Drawer";
@@ -12,7 +13,7 @@ const navigation = [
   { name: "Home", href: "/" },
   { name: "About", href: "/about-us" },
   { name: "Courses", href: "/courses" },
-  { name: "Contact Us", href: "/contact-us" },
+  { name: "Contact ", href: "/contact-us" },
 ];
 
 function classNames(...classes: string[]) {
@@ -33,21 +34,21 @@ const Navbar = () => {
               <div className="flex flex-shrink-0 items-center">
                 <Link href="/" className="flex items-center">
                           <Image
-                            src="/logo.png"
+                            src={Logo}
                             alt="Logo"
                             width={60}
                             height={60}
-                            className="h-14 w-auto block lg:hidden"
+                            className="h-8 w-auto block lg:hidden"
                             priority
                           />
                         </Link>
                         <Link href="/" className="flex items-center">
                          <Image
-                            src="/logo.png"
+                            src={Logo}
                             alt="Logo"
                             width={60}
                             height={60}
-                            className="h-14 w-auto hidden  lg:block"
+                            className="h-8 w-auto hidden  lg:block"
                             priority
                           />
                         </Link>
@@ -82,11 +83,12 @@ const Navbar = () => {
                   Register
                 </button>
               </Link>
-              <a href="/contact-us">
-                <button className="text-lg text-Blueviolet px-6 py-4 rounded-full font-medium shadow hover:brightness-110 transition border border-lightgray hover:bg-semiblueviolet">
-                  Call Us
-                </button>
-              </a>
+             <a href="tel:+917073437393">
+  <button className="text-lg text-Blueviolet px-6 py-4 rounded-full font-medium shadow hover:brightness-110 transition border border-lightgray hover:bg-semiblueviolet">
+    Call Us
+  </button>
+</a>
+
             </div>
 
             {/* DRAWER ICON (MOBILE) */}

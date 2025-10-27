@@ -2,6 +2,7 @@ import React, { ReactNode } from "react";
 import { XMarkIcon } from '@heroicons/react/24/outline'
 import Link from "next/link";
 import Image from "next/image";
+import Logo from "@/public/logo.png"
 interface DrawerProps {
     children: ReactNode;
     isOpen: boolean;
@@ -35,9 +36,9 @@ const Drawer = ({ children, isOpen, setIsOpen }: DrawerProps) => {
               }}
             >
               <Image
-                className="h-12 w-20 cursor-pointer"
-                src="/logo.png"
-                alt="Courses-Logo"
+                className="h-10 cursor-pointer"
+                src={Logo}
+                alt="Logo"
                  width={60}
                  height={60}
               />

@@ -2,14 +2,14 @@
 import Link from 'next/link';
 import React from "react";
 import Image from "next/image";
-import instructorImg from "@/public/assets/1.jpg"; // <-- replace with your image path
+import instructorImg from "@/public/assets/whychooseus/1.jpg"; 
 import StarSection from "@/app/components/Star/index"
 const BecomeInstructor = () => {
   return (
       <div className="z-0  relative max-w-7xl mx-auto pt-20">
           {/* Header */}
               <header className="text-center mb-12  px-6">
-                 <h2 className="text-3xl md:text-4xl font-semibold text-gray-900 text-center">
+                 <h2 className="text-3xl md:text-4xl font-semibold text-midnightblue  text-center">
                 Why{" "}
                 <span className=" text-Blueviolet ">
                  Choose {" "}

@@ -64,18 +64,18 @@ const Footer: React.FC = () => {
             <h3 className="text-xl font-bold mb-3 text-Blueviolet">Connect Us</h3>
             <ul className="space-y-2 text-black text-sm sm:text-base">
               <li>
-                <a href="mailto:xyz@gmail.com" className="hover:text-gray-400 transition">
+                {/* <a href="mailto:xyz@gmail.com" className="hover:text-gray-400 transition">
                   xyz@gmail.com
+                </a> */}
+              </li>
+              <li>
+                <a href="mailto:tutor4study24x7@gmail.com" className="hover:text-gray-400 transition">
+                  tutor4study24x7@gmail.com
                 </a>
               </li>
               <li>
-                <a href="mailto:abc@gmail.com" className="hover:text-gray-400 transition">
-                  abc@gmail.com
-                </a>
-              </li>
-              <li>
-                <a href="tel:+911234567890" className="hover:text-gray-400 transition">
-                  +91 1234567890
+                <a href="tel:+91 7073437393" className="hover:text-gray-400 transition flex justify-center">
+                  +91 7073437393
                 </a>
               </li>
             </ul>

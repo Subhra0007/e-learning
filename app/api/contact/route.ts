@@ -60,8 +60,6 @@ export async function POST(req: Request): Promise<Response> {
     // ✅ Configure transporter
     const transporter = nodemailer.createTransport({
       host: EMAIL_HOST,
-      port: parseInt(EMAIL_PORT),
-      secure: parseInt(EMAIL_PORT) === 465, // true for port 465, false otherwise
       auth: {
         user: EMAIL_USER,
         pass: EMAIL_PASS,

@@ -108,7 +108,7 @@ export default function MultipleItems(): JSX.Element | null {
               <div key={i}>
                 <div className="m-3 md:my-3 text-center">
                   {/* Fixed square container */}
-                  <div className="relative w-[250px] h-[250px] mx-auto rounded-full overflow-hidden border-4 border-white shadow-lg transition-transform duration-300 hover:scale-105">
+                  <div className="relative lg:w-[250px] lg:h-[250px] w-[150px] h-[150px] mx-auto rounded-full overflow-hidden border-4 border-white shadow-lg transition-transform duration-300 hover:scale-105">
                     <Image
                       src={item.imgSrc}
                       alt={item.name}

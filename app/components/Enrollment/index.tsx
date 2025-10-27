@@ -4,7 +4,8 @@ const Newsletter = () => {
     return (
         <>
             {/* <div className="mx-auto max-w-2xl md:max-w-7xl sm:rounded-3xl testimonialbg"> */}
-            <div className="mx-auto max-w-3xl md:max-w-7xl rounded-3xl px-6 pt-10 mt-5">
+            <div className="mx-auto max-w-3xl md:max-w-7xl rounded-3xl px-6 pt-10 mt-5 lg
+            :pt-20 lg:mt-3">
                 <div className="grid grid-cols-1 gap-y-10 gap-x-6 md:grid-cols-12 xl:gap-x-8">
 
                     <div className="col-span-12 bg-imagee">

@@ -46,7 +46,7 @@ const Data = () => {
                 </button>
               </Link>
             <a href="tel:+917073437393">
-  <button className="text-lg text-Blueviolet px-6 py-4 rounded-full font-medium shadow hover:brightness-110 transition border border-lightgray hover:bg-semiblueviolet">
+  <button className="bg-white w-full text-Blueviolet border border-semiblueviolet font-medium py-2 px-4 rounded-full">
     Call Us
   </button>
 </a>

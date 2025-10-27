@@ -52,6 +52,7 @@ const ContactForm: React.FC<{
   responseMessage: string;
 }> = ({ formData, setFormData, handleSubmit, loading, responseMessage }) => {
   const [emailError, setEmailError] = useState("");
+  const [contactError, setContactError] = useState("");
 
   const handleEmailChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { value } = e.target;
@@ -59,6 +60,20 @@ const ContactForm: React.FC<{
 
     const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     setEmailError(regex.test(value) ? "" : "Please enter a valid email");
+  };
+
+  const handleContactChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const { value } = e.target;
+    // Allow only digits
+    const numericValue = value.replace(/\D/g, "");
+    setFormData((prev) => ({ ...prev, contact: numericValue }));
+
+    // ✅ Check for exactly 10 digits
+    if (numericValue.length !== 10) {
+      setContactError("Contact number must be exactly 10 digits");
+    } else {
+      setContactError("");
+    }
   };
 
   return (
@@ -75,7 +90,7 @@ const ContactForm: React.FC<{
               setFormData((prev) => ({ ...prev, name: e.target.value }))
             }
             required
-            className="p-3 rounded bg-gray-800 text-black placeholder-black focus:ring-2 focus:ring-Blueviolet outline-none"
+            className="p-3 rounded bg-gray-200 text-black placeholder-gray-700 focus:ring-2 focus:ring-Blueviolet outline-none"
           />
           <div className="flex flex-col">
             <input
@@ -85,7 +100,7 @@ const ContactForm: React.FC<{
               value={formData.email}
               onChange={handleEmailChange}
               required
-              className={`p-3 rounded bg-gray-800 text-black placeholder-black focus:ring-2 focus:ring-Blueviolet outline-none ${
+              className={`p-3 rounded bg-gray-200 text-black placeholder-gray-700 focus:ring-2 focus:ring-Blueviolet outline-none ${
                 emailError ? "border-red-500 border" : ""
               }`}
             />
@@ -107,48 +122,53 @@ const ContactForm: React.FC<{
               inputProps={{
                 name: "countryCode",
                 required: true,
-                className:
-                  "w-full p-3 rounded bg-gray-800 text-black placeholder-black focus:ring-2 focus:ring-Blueviolet outline-none",
               }}
               enableSearch
               countryCodeEditable
-                containerStyle={{
-    width: "100%",
-  }}
-  buttonStyle={{
-    backgroundColor: "#fff",
-    border: "1px solid #d1d5db", // Tailwind gray-300
-    borderRight: "none",
-    borderRadius: "8px 0 0 8px",
-    padding: "0 10px",
-  }}
-  inputStyle={{
-    width: "100%",
-    height: "48px",
-    border: "1px solid #d1d5db",
-    borderRadius: "0 8px 8px 0",
-    paddingLeft: "65px", // gives space between flag and code
-    fontSize: "16px",
-    backgroundColor: "#fff",
-    color: "#000",
-  }}
-  dropdownStyle={{
-    color: "#000",
-  }}
+              containerStyle={{
+                width: "100%",
+              }}
+              buttonStyle={{
+                backgroundColor: "#fff",
+                border: "1px solid #d1d5db",
+                borderRight: "none",
+                borderRadius: "8px 0 0 8px",
+                padding: "0 10px",
+              }}
+              inputStyle={{
+                width: "100%",
+                height: "48px",
+                border: "1px solid #d1d5db",
+                borderRadius: "0 8px 8px 0",
+                paddingLeft: "65px",
+                fontSize: "16px",
+                backgroundColor: "#fff",
+                color: "#000",
+              }}
+              dropdownStyle={{
+                color: "#000",
+              }}
             />
           </div>
           <div className="col-span-2 md:col-span-3">
-            <input
-              type="tel"
-              name="contact"
-              placeholder="Contact or WhatsApp Number"
-              value={formData.contact}
-              onChange={(e) =>
-                setFormData((prev) => ({ ...prev, contact: e.target.value }))
-              }
-              required
-              className="w-full p-3 rounded bg-gray-800 text-black placeholder-black focus:ring-2 focus:ring-Blueviolet outline-none"
-            />
+            <div className="flex flex-col">
+              <input
+                type="tel"
+                name="contact"
+                placeholder="Contact or WhatsApp Number"
+                value={formData.contact}
+                onChange={handleContactChange}
+                required
+                className={`w-full p-3 rounded bg-gray-200 text-black placeholder-gray-700 focus:ring-2 focus:ring-Blueviolet outline-none ${
+                  contactError ? "border-red-500 border" : ""
+                }`}
+              />
+              {contactError && (
+                <span className="text-red-500 text-sm mt-1">
+                  {contactError}
+                </span>
+              )}
+            </div>
           </div>
         </div>
 
@@ -159,7 +179,7 @@ const ContactForm: React.FC<{
           onChange={(e) =>
             setFormData((prev) => ({ ...prev, courses: e.target.value }))
           }
-          className="w-full p-3 rounded bg-gray-800 text-black focus:ring-2 focus:ring-Blueviolet outline-none"
+          className="w-full p-3 rounded bg-gray-200 text-black focus:ring-2 focus:ring-Blueviolet outline-none"
         >
           <option>Complete Digital Marketing Course</option>
           <option>UX Design Thinking for Beginners</option>
@@ -179,14 +199,14 @@ const ContactForm: React.FC<{
             setFormData((prev) => ({ ...prev, message: e.target.value }))
           }
           placeholder="Briefly describe your message"
-          className="w-full p-3 rounded bg-gray-800 text-black placeholder-black focus:ring-2 focus:ring-Blueviolet outline-none"
+          className="w-full p-3 rounded bg-gray-200 text-black placeholder-gray-700 focus:ring-2 focus:ring-Blueviolet outline-none"
         />
 
         {/* Submit */}
         <div className="flex justify-center">
           <button
             type="submit"
-            disabled={loading || emailError !== ""}
+            disabled={loading || emailError !== "" || contactError !== ""}
             className="py-2 px-8 text-lg text-Blueviolet rounded-full font-medium shadow hover:brightness-110 transition border border-lightgray hover:bg-white"
           >
             {loading ? "Submitting..." : "Submit"}
@@ -217,14 +237,17 @@ const ContactInfo: React.FC = () => (
 
         <p className="flex items-center gap-2 mt-3 text-gray-300">
           <CallOutline />
-          <a href="tel:+91 7073437393" className="hover:underline">
+          <a href="tel:+917073437393" className="hover:underline">
             +91 7073437393
           </a>
         </p>
 
         <p className="flex items-center gap-2 mt-3 text-gray-300">
           <MailOutline />
-          <a href="mailto:tutor4study24x7@gmail.com" className="hover:underline">
+          <a
+            href="mailto:tutor4study24x7@gmail.com"
+            className="hover:underline"
+          >
             tutor4study24x7@gmail.com
           </a>
         </p>
@@ -279,6 +302,13 @@ const ContactUs: React.FC = () => {
     e.preventDefault();
     setLoading(true);
     setResponseMessage("");
+
+    // Final client-side validation
+    if (!/^\d{10}$/.test(formData.contact)) {
+      setResponseMessage("Please enter a valid 10-digit contact number.");
+      setLoading(false);
+      return;
+    }
 
     try {
       const res = await fetch("/api/contact", {

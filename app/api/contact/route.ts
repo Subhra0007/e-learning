@@ -22,35 +22,30 @@ export async function POST(req: Request): Promise<Response> {
 
     // ✅ Validate required fields
     if (!name || !email || !countryCode || !contact || !courses || !message) {
-      return new Response(
-        JSON.stringify({ error: "Missing required fields" }),
-        { status: 400 }
-      );
+      return new Response(JSON.stringify({ error: "Missing required fields" }), {
+        status: 400,
+      });
     }
 
     // ✅ Validate email format
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(email)) {
+      return new Response(JSON.stringify({ error: "Invalid email format" }), {
+        status: 400,
+      });
+    }
+
+    // ✅ Validate contact (10 digits)
+    if (!/^\d{10}$/.test(contact)) {
       return new Response(
-        JSON.stringify({ error: "Invalid email format" }),
+        JSON.stringify({ error: "Contact number must be 10 digits" }),
         { status: 400 }
       );
     }
 
-    // ✅ Check environment variables
-    const {
-      EMAIL_HOST,
-      EMAIL_USER,
-      EMAIL_PASS,
-      CONTACT_EMAIL_TO,
-    } = process.env;
+    const { EMAIL_HOST, EMAIL_USER, EMAIL_PASS, CONTACT_EMAIL_TO } = process.env;
 
-    if (
-      !EMAIL_HOST ||
-      !EMAIL_USER ||
-      !EMAIL_PASS ||
-      !CONTACT_EMAIL_TO
-    ) {
+    if (!EMAIL_HOST || !EMAIL_USER || !EMAIL_PASS || !CONTACT_EMAIL_TO) {
       return new Response(
         JSON.stringify({ error: "Server email configuration missing" }),
         { status: 500 }
@@ -60,6 +55,8 @@ export async function POST(req: Request): Promise<Response> {
     // ✅ Configure transporter
     const transporter = nodemailer.createTransport({
       host: EMAIL_HOST,
+      port: 465,
+      secure: true,
       auth: {
         user: EMAIL_USER,
         pass: EMAIL_PASS,
@@ -82,7 +79,6 @@ export async function POST(req: Request): Promise<Response> {
       `,
     };
 
-    // ✅ Send the email
     await transporter.sendMail(mailOptions);
 
     return new Response(

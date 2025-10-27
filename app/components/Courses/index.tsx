@@ -184,7 +184,7 @@ export default class MultipleItems extends Component {
               Explore courses&nbsp;&gt;
             </Link>
           </div>
-      <div className="py-10">
+    
   {/* Add negative margin to prevent outer spacing */}
   <Slider
     {...settings}
@@ -279,7 +279,7 @@ export default class MultipleItems extends Component {
       );
     })}
   </Slider>
-</div>
+
 
         </div>
       </div>

@@ -180,7 +180,7 @@ export default class MultipleItems extends Component {
                     </div>
                   </div>
 
-                  <div className="px-4 pt-6">
+                  <div className="lg:px-6 px-3 pt-6 ">
                     <h4 className="text-xl font-bold text-black leading-tight mb-2">
                       {items.heading}
                     </h4>
@@ -189,7 +189,7 @@ export default class MultipleItems extends Component {
                     </h4>
 
                    
-                                 <div className="bg-semiblueviolet w-80 h-60 px-4 pt-4 pb-6 shadow-md rounded-2xl flex flex-col justify-between">
+                                 <div className="bg-semiblueviolet w-60 lg:w-80 h-60 px-6 pt-4 pb-6 shadow-md rounded-2xl flex flex-col justify-center ">
   <div>
     <p className="text-gray-700 text-sm mb-4 line-clamp-3">{items.description}</p>
     <h3 className="text-sm font-medium text-gray-700 mb-2">

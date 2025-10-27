@@ -152,7 +152,7 @@ export default function CoursesGrid() {
                 <h4 className="text-xl font-bold text-black leading-tight mb-4">
                   {items.heading2}
                 </h4>
-              <div className="bg-semiblueviolet w-80 h-60 px-4 pt-4 pb-6 shadow-md rounded-2xl flex flex-col justify-between">
+              <div className="bg-semiblueviolet w-60 lg:w-80 h-60 px-4 pt-4 pb-6 shadow-md rounded-2xl flex flex-col justify-between lg:mx-1 mx-2">
   <div>
     <p className="text-gray-700 text-sm mb-4 line-clamp-3">{items.description}</p>
     <h3 className="text-sm font-medium text-gray-700 mb-2">

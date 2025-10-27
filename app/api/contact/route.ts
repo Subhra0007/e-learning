@@ -40,7 +40,6 @@ export async function POST(req: Request): Promise<Response> {
     // ✅ Check environment variables
     const {
       EMAIL_HOST,
-      EMAIL_PORT,
       EMAIL_USER,
       EMAIL_PASS,
       CONTACT_EMAIL_TO,
@@ -48,7 +47,6 @@ export async function POST(req: Request): Promise<Response> {
 
     if (
       !EMAIL_HOST ||
-      !EMAIL_PORT ||
       !EMAIL_USER ||
       !EMAIL_PASS ||
       !CONTACT_EMAIL_TO

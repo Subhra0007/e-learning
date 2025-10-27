@@ -110,7 +110,7 @@ export default class MultipleItems extends Component {
             <h3 className="mb-5 text-3xl md:text-4xl font-semibold text-gray-900 text-center">Testimonials</h3>
           <Slider {...settings} className="py-6">
             {postData.map((items, i) => (
-              <div key={i}>
+              <div key={i} className="px-4 py-4">
                 <div
   className={`bg-white m-4 p-6 mt-20 mb-2 relative border border-white/10 rounded-xl shadow-md w-[320px] h-[320px]  flex flex-col justify-between ${
     i % 2 ? "middleDiv" : "testimonial-shadow "

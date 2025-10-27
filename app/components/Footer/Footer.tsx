@@ -23,7 +23,7 @@ const Footer: React.FC = () => {
               alt="Logo"
               width={180}
               height={70}
-              className="h-14 w-auto mb-3"
+              className="h-20 w-auto mb-3"
               priority
             />
             <p className="text-base sm:text-lg font-semibold leading-relaxed text-center text-black">
@@ -109,7 +109,7 @@ const Footer: React.FC = () => {
 
         {/* Copyright */}
         <div className="text-center text-sm text-slate-300 mt-10">
-          © {currentYear} abc. All Rights Reserved.
+          © {currentYear} Tutor4Study. All Rights Reserved.
         </div>
       </div>
     </footer>

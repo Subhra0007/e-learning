@@ -4,7 +4,7 @@ import Footer from './components/Footer/Footer';
 import WhatsAppButton from './components/whatsappButton/WhatsAppButton';
 
 export const metadata = {
-  title: 'Education',
+  title: 'Tutor4Study',
   description: 'Learning website',
 };
 

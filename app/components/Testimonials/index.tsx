@@ -3,9 +3,7 @@ import Slider from "react-slick";
 import React, { Component } from "react";
 import { StarIcon } from "@heroicons/react/24/solid";
 import Image from "next/image";
-import Image1 from "@/public/assets/testimonial/images1.jpg"
-import Image2 from "@/public/assets/testimonial/images2.jpg"
-import Image3 from "@/public/assets/testimonial/images3.jpg"
+
 // ======================
 // CAROUSEL DATA
 // ======================
@@ -22,43 +20,37 @@ const postData: DataType[] = [
     profession: "CEO, Parkview Int.Ltd",
     comment:
       "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour",
-    imgSrc:"/assets/testimonial/user.svg" ,
+    imgSrc:"/assets/testimonial/image5.svg" ,
   },
   {
     name: "Leslie Alexander",
     profession: "CEO, Parkview Int.Ltd",
     comment:
       "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour",
-    imgSrc: "/assets/mentor/user1.png",
+    imgSrc: "/assets/testimonial/image4.svg",
   },
   {
     name: "Cody Fisher",
     profession: "CEO, Parkview Int.Ltd",
     comment:
       "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour",
-    imgSrc: "/assets/testimonial/user.svg",
+    imgSrc: "/assets/testimonial/images3.svg",
   },
   {
     name: "Robert Fox",
     profession: "CEO, Parkview Int.Ltd",
     comment:
       "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour",
-    imgSrc: "/assets/mentor/user1.png",
+    imgSrc: "/assets/testimonial/image6.svg",
   },
   {
     name: "Leslie Alexander",
     profession: "CEO, Parkview Int.Ltd",
     comment:
       "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour",
-    imgSrc: "/assets/testimonial/user.svg",
+    imgSrc: "/assets/testimonial/image7.svg",
   },
-  {
-    name: "Cody Fisher",
-    profession: "CEO, Parkview Int.Ltd",
-    comment:
-      "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour",
-    imgSrc: "/assets/mentor/user1.png",
-  },
+  
 ];
 
 // ======================
@@ -77,9 +69,9 @@ export default class MultipleItems extends Component {
       speed: 4000,
       autoplaySpeed: 800,
       cssEase: "linear",
-      pauseOnHover: false,      // ✅ keeps autoplay running on hover
-      pauseOnFocus: false,      // ✅ keeps autoplay running on click/focus
-      pauseOnDotsHover: false,  // ✅ keeps autoplay running on dots hover
+      pauseOnHover: false,      
+      pauseOnFocus: false,      
+      pauseOnDotsHover: false,  
       responsive: [
         {
           breakpoint: 1200,
@@ -131,7 +123,7 @@ export default class MultipleItems extends Component {
                       alt={items.name}
                       width={100}
                       height={100}
-                      className="inline-block rounded-full"
+                      className="inline-block rounded-full  w-10 h-10"
                     />
                   </div>
 

@@ -155,7 +155,7 @@ export default class MultipleItems extends Component {
             </h3>
             <Link
               href="/courses"
-              className="text-Blueviolet text-lg font-medium hover:text-blue-600 transition-colors duration-300"
+              className="text-Blueviolet lg:text-lg text-sm font-medium hover:text-blue-600 transition-colors duration-300"
             >
               Explore courses&nbsp;&gt;
             </Link>
@@ -180,7 +180,7 @@ export default class MultipleItems extends Component {
                     </div>
                   </div>
 
-                  <div className="px-2 pt-6">
+                  <div className="px-4 pt-6">
                     <h4 className="text-xl font-bold text-black leading-tight mb-2">
                       {items.heading}
                     </h4>
@@ -189,17 +189,29 @@ export default class MultipleItems extends Component {
                     </h4>
 
                    
-                     <p className="text-gray-700 text-sm mb-4">{items.description}</p>
-                      <h3 className="text-sm font-medium text-gray-700 mb-2 space-x-2 "><strong>Author:</strong>{" "}
-                      {items.name}
-                    </h3>
-                     {/* New Extra Info Section */}
-                    <div className="text-sm text-gray-500 space-y-1 mb-4">
-                      <p><strong>Duration:</strong> {items.duration}</p>
-                      <p><strong>Level:</strong> {items.level}</p>
-                      <p><strong>Category:</strong> {items.category}</p>
+                                 <div className="bg-semiblueviolet w-80 h-60 px-4 pt-4 pb-6 shadow-md rounded-2xl flex flex-col justify-between">
+  <div>
+    <p className="text-gray-700 text-sm mb-4 line-clamp-3">{items.description}</p>
+    <h3 className="text-sm font-medium text-gray-700 mb-2">
+      <strong>Author:</strong> {items.name}
+    </h3>
+
+    {/* Extra Info */}
+    <div className="text-sm text-gray-500 space-y-1">
+      <p>
+        <strong>Duration:</strong> {items.duration}
+      </p>
+      <p>
+        <strong>Level:</strong> {items.level}
+      </p>
+      <p>
+        <strong>Category:</strong> {items.category}
+      </p>
+    </div>
+  </div>
+
                     </div>
-                    <div className="flex justify-between items-center mb-6">
+                    <div className="flex justify-between items-center mb-6 mt-4">
                       <div className="flex items-center gap-3">
                         <h3 className=" text-2xl font-bold">{items.rating}</h3>
                         <div className="flex">

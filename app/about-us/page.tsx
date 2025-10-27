@@ -15,7 +15,7 @@ const Team = dynamic(() => import('@/app/components/Mentor/index'), { ssr: false
 // Dynamic import of Testimonial component (carousel) client-side only
 const Testimonial = dynamic(() => import('@/app/components/Testimonials/index'), { ssr: false });
 // Dynamic import of Intaerested component (carousel) client-side only
-const Intaerested = dynamic(() => import('@/app/components/Newsletter/index'), { ssr: false });
+const Intaerested = dynamic(() => import('@/app/components/Enrollment/index'), { ssr: false });
 // Dynamic import of Intaerested component (carousel) client-side only
 const Partners = dynamic(() => import('@/app/components/Companies/index'), { ssr: false });
 

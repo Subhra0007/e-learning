@@ -5,7 +5,7 @@ import Courses from './components/Courses/index';
 import WhyChooseUs from './components/WhyChooseUs/index'
 import Mentor from './components/Mentor/index';
 import Testimonials from './components/Testimonials/index';
-import Newsletter from './components/Newsletter/index';
+import Enrollment from "@/app/components/Enrollment/index";
 
 
 export default function Home() {
@@ -16,7 +16,7 @@ export default function Home() {
       <WhyChooseUs/>
       <Mentor />
       <Testimonials />
-      <Newsletter />
+      <Enrollment />
       <Companies />
     </main>
   )

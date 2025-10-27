@@ -22,7 +22,7 @@ const Banner = () => {
                             Register </button>
                             </Link>
                             <Link href="/about-us">
-    <button type="button" className='text-lg text-Blueviolet px-6 py-3.5 rounded-full font-medium shadow hover:brightness-110 transition border border-lightgray hover:bg-semiblueviolet'>
+    <button type="button" className='text-lg text-Blueviolet px-6 py-4 rounded-full font-medium shadow hover:brightness-110 transition border border-lightgray hover:bg-semiblueviolet'>
       About Us <span className="text-lg">➜</span>
     </button>
   </Link>

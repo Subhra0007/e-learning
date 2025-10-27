@@ -110,67 +110,67 @@ const ContactForm: React.FC<{
           </div>
         </div>
 
-        {/* Country Code + Contact */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          <div className="flex flex-col">
-            <PhoneInput
-              country={"in"}
-              value={formData.countryCode}
-              onChange={(code) =>
-                setFormData((prev) => ({ ...prev, countryCode: code }))
-              }
-              inputProps={{
-                name: "countryCode",
-                required: true,
-              }}
-              enableSearch
-              countryCodeEditable
-              containerStyle={{
-                width: "100%",
-              }}
-              buttonStyle={{
-                backgroundColor: "#fff",
-                border: "1px solid #d1d5db",
-                borderRight: "none",
-                borderRadius: "8px 0 0 8px",
-                padding: "0 10px",
-              }}
-              inputStyle={{
-                width: "100%",
-                height: "48px",
-                border: "1px solid #d1d5db",
-                borderRadius: "0 8px 8px 0",
-                paddingLeft: "65px",
-                fontSize: "16px",
-                backgroundColor: "#fff",
-                color: "#000",
-              }}
-              dropdownStyle={{
-                color: "#000",
-              }}
-            />
-          </div>
-          <div className="col-span-2 md:col-span-3">
-            <div className="flex flex-col">
-              <input
-                type="tel"
-                name="contact"
-                placeholder="Contact or WhatsApp Number"
-                value={formData.contact}
-                onChange={handleContactChange}
-                required
-                className={`w-full p-3 rounded bg-gray-200 text-black placeholder-gray-700 focus:ring-2 focus:ring-Blueviolet outline-none ${
-                  contactError ? "border-red-500 border" : ""
-                }`}
-              />
-              {contactError && (
-                <span className="text-red-500 text-sm mt-1">
-                  {contactError}
-                </span>
-              )}
-            </div>
-          </div>
-        </div>
+      {/* Country Code + Contact */}
+<div className="grid lg:grid-cols-2 grid-cols-1 gap-4">
+  {/* Country Code */}
+  <div className="flex flex-col">
+    <PhoneInput
+      country={"in"}
+      value={formData.countryCode}
+      onChange={(code) =>
+        setFormData((prev) => ({ ...prev, countryCode: code }))
+      }
+      inputProps={{
+        name: "countryCode",
+        required: true,
+      }}
+      enableSearch
+      countryCodeEditable
+      containerStyle={{
+        width: "100%",
+      }}
+      buttonStyle={{
+        backgroundColor: "#fff",
+        border: "1px solid #d1d5db",
+        borderRight: "none",
+        borderRadius: "8px 0 0 8px",
+        padding: "0 10px",
+      }}
+      inputStyle={{
+        width: "100%",
+        height: "48px",
+        border: "1px solid #d1d5db",
+        borderRadius: "0 8px 8px 0",
+        paddingLeft: "65px",
+        fontSize: "16px",
+        backgroundColor: "#fff",
+        color: "#000",
+      }}
+      dropdownStyle={{
+        color: "#000",
+      }}
+    />
+  </div>
+
+  {/* Contact Number */}
+  <div className="flex flex-col">
+    <input
+      type="tel"
+      name="contact"
+      placeholder="Contact or WhatsApp Number"
+      value={formData.contact}
+      onChange={handleContactChange}
+      required
+      className={`w-full p-3 rounded bg-gray-200 text-black placeholder-gray-700 focus:ring-2 focus:ring-Blueviolet outline-none ${
+        contactError ? "border-red-500 border" : ""
+      }`}
+    />
+    {contactError && (
+      <span className="text-red-500 text-sm mt-1">{contactError}</span>
+    )}
+  </div>
+</div>
+
 
         {/* Courses */}
         <select

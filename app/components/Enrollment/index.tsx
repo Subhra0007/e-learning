@@ -6,7 +6,7 @@ const Newsletter = () => {
         <>
         
         {/* get start*/}
-        <div className="max-w-7xl mx-auto pt-10 mt-4">
+        <div className="max-w-7xl mx-auto pt-10 mt-4 px-6">
           <div className="flex flex-col">
             <h2 className="text-3xl md:text-4xl font-semibold text-gray-900 text-center">
               Get <span className="text-Blueviolet"> Started</span> Today
@@ -65,7 +65,7 @@ const Newsletter = () => {
             <div className="mx-auto max-w-3xl md:max-w-7xl rounded-3xl px-6 mt-10">
                 <div className="grid grid-cols-1 gap-y-10 gap-x-6 md:grid-cols-12 xl:gap-x-8">
 
-                    <div className="col-span-12 bg-imagee">
+                    <div className="col-span-12 bg-imagee p-2">
                         <div className="mb-10 mt-24 lg:mx-64 lg:mt-24 lg:mb-10">
                             <h6 className="text-lg  text-center font-semibold text-white mb-3">With flexible pricing, expert tutors, and a hassle-free process, <strong>Tutor4Study </strong>makes online tutoring easy and accessible.</h6>
                             <h3 className="text-base font-normal opacity-75 text-white text-center mb-8">

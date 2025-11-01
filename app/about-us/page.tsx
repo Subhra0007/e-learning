@@ -95,8 +95,9 @@ const SkillsSection: FC = () => {
   ];
 
   return (
+    <div className='bg-white'>
     <section className="max-w-7xl mx-auto pt-5">
-      <div className="bg-white px-6">
+      <div className=" px-6">
         <div className="grid md:grid-cols-2 gap-10 items-top">
           {/* Left Content */}
           <div className="bg-paleblue p-6 rounded-xl shadow-md lg:text-left text-center lg:h-[665px] h-full">
@@ -192,7 +193,8 @@ const SkillsSection: FC = () => {
             </p>
           </div>
         </div>
-
+       </div>  
+    </section>
         <div className="">
           < HowItWorks/>
         </div>
@@ -216,9 +218,7 @@ const SkillsSection: FC = () => {
         <div className="">
           < Partners/>
         </div>
-      </div>
-      
-    </section>
+     </div>
   );
 };
 

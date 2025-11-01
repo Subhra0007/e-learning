@@ -69,7 +69,7 @@ const Newsletter = () => {
                         <div className="mb-10 mt-24 lg:mx-64 lg:mt-24 lg:mb-10">
                             <h6 className="text-lg  text-center font-semibold text-white mb-3">With flexible pricing, expert tutors, and a hassle-free process, <strong>Tutor4Study </strong>makes online tutoring easy and accessible.</h6>
                             <h3 className="text-base font-normal opacity-75 text-white text-center mb-8">
-                               Don’t wait! Take the first step toward achieving your academic goals today.
+                               Don&lsquo;t wait! Take the first step toward achieving your academic goals today.
                             </h3>
                              <Link href="/contact-us">
                                <button className="bg-white text-lg font-medium py-4 px-6 transition duration-150 ease-in-out rounded-full  hover:bg-paleblue text-center flex justify-center max-w-xl mx-auto">

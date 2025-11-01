@@ -34,7 +34,7 @@ const values: ValueItem[] = [
  { icon: Star, title: 'Expert Tutors', description: 'Expert tutors with specialized knowledge' },
 { icon: Clock, title: '24/7 Support', description: '24/7 availability, so you can get help whenever you need it' },
 { icon: Wallet, title: 'Affordable Plans', description: 'Flexible pricing options to suit every budget' },
-{ icon: UserCheck, title: 'Personalized Learning', description: 'A personalized approach to every student’s needs' },
+{ icon: UserCheck, title: 'Personalized Learning', description: '•	A personalized approach to every student’s needs' },
 ];
 
 // -----------------------------------
@@ -106,7 +106,7 @@ const SkillsSection: FC = () => {
                 <span className="text-blue-500">Tutor4Study </span>
               </h2>
               <p className="text-gray-600">
-               At <strong>Tutor4Study</strong>, we believe every student deserves personalized, top-quality tutoring. Whether you're tackling tough homework, preparing for important exams, or looking to boost your grades, our experienced tutors are here to help.
+               At <strong>Tutor4Study</strong>, we believe every student deserves personalized, top-quality tutoring. Whether you&lsquo;re tackling tough homework, preparing for important exams, or looking to boost your grades, our experienced tutors are here to help.
               </p>
               <h2 className="text-xl  font-bold leading-snug">
                Why Choose Tutor4Study
@@ -188,7 +188,7 @@ const SkillsSection: FC = () => {
             <Eye className="text-4xl text-orange-600 mb-4" />
             <h2 className="text-2xl font-bold mb-3 text-slate-900">Our Vision</h2>
             <p className="text-slate-600">
-             We’re not just about helping you pass a test—we’re about helping you understand the material, build confidence, and develop lifelong learning skills. Let us be a part of your academic journey and help you unlock your full potential.
+             We&lsquo;re not just about helping you pass a test—we&lsquo;re about helping you understand the material, build confidence, and develop lifelong learning skills. Let us be a part of your academic journey and help you unlock your full potential.
             </p>
           </div>
         </div>

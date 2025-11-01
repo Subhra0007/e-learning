@@ -41,7 +41,7 @@ const BecomeInstructor = () => {
   <li>Expert tutors with specialized knowledge</li>
   <li>24/7 availability, so you can get help whenever you need it</li>
   <li>Flexible pricing options to suit every budget</li>
-  <li>A personalized approach to every student’s needs</li>
+  <li>A personalized approach to every student&apos;s needs</li>
 </ul>
 
          <Link href="/about-us">

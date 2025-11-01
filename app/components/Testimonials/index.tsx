@@ -94,7 +94,7 @@ export default class MultipleItems extends Component {
       <div className="pt-20 " id="testimonial">
        
             <h3 className="mb-5 text-3xl md:text-4xl font-semibold text-gray-900 text-center">Hear From Our <span ></span>Students </h3>
-            <p className="mt-4 text-center">Here’s what our students have to say about their experiences with Tutor4Study</p>
+            <p className="mt-4 text-center">Here&apos;s what our students have to say about their experiences with Tutor4Study</p>
           <Slider {...settings} className="py-6">
             {postData.map((items, i) => (
               <div key={i} className="px-4 py-4">

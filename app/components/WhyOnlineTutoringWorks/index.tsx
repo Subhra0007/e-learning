@@ -10,7 +10,7 @@ const WhyOnlineTutoringWorks = () => {
           Why <span className="text-Blueviolet">Online Tutoring Works</span>
         </h2>
         <p className="max-w-4xl mx-auto text-center text-gray-600 mb-12">
-          The convenience of online tutoring offers so many benefits. Here’s why
+          The convenience of online tutoring offers so many benefits. Here&apos;s why
           students like you choose Tutor4Study
         </p>
 
@@ -26,7 +26,7 @@ const WhyOnlineTutoringWorks = () => {
             </div>
             <p className="text-gray-600 text-sm leading-relaxed flex-grow">
               Our tutors are available 24/7, so you can get the help you need
-              when it fits your schedule—whether that’s late at night before a
+              when it fits your schedule—whether that&apos;s late at night before a
               big exam or on weekends.
             </p>
           </div>
@@ -40,10 +40,10 @@ const WhyOnlineTutoringWorks = () => {
               </h3>
             </div>
             <p className="text-gray-600 text-sm leading-relaxed flex-grow">
-              We understand that every student learns differently. That’s why we
+              We understand that every student learns differently. That&apos;s why we
               match you with tutors who tailor their approach to your unique
               needs. Whether you need a quick refresher or ongoing support,
-              we’ve got you covered.
+              we&apos;ve got you covered.
             </p>
           </div>
 
@@ -58,7 +58,7 @@ const WhyOnlineTutoringWorks = () => {
             <p className="text-gray-600 text-sm leading-relaxed flex-grow">
               No need to commute or deal with the hassle of finding a tutor
               nearby. With Tutor4Study, you can learn from the comfort of your
-              home, on your own terms. It’s the ultimate convenience!
+              home, on your own terms. It&apos;s the ultimate convenience!
             </p>
           </div>
         
@@ -72,8 +72,8 @@ const WhyOnlineTutoringWorks = () => {
             </div>
             <p className="text-gray-600 text-sm leading-relaxed flex-grow">
               All of our tutors are highly qualified professionals with
-              experience in their fields. Whether it’s advanced calculus or
-              creative writing, you’ll be learning from experts who can explain
+              experience in their fields. Whether it&apos;s advanced calculus or
+              creative writing, you&apos;ll be learning from experts who can explain
               even the most complex concepts in an easy-to-understand way.
             </p>
           </div>

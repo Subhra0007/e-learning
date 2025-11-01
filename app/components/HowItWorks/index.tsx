@@ -6,7 +6,7 @@ const HowItWorks = () => {
     <section className="pt-10 bg-gray-100">
       <div className="max-w-7xl mx-auto px-6">
         <h2 className="text-4xl font-semibold text-center text-gray-800 mb-4">How It <span className="text-Blueviolet">Works</span></h2>
-        <p className="max-w-4xl mx-auto text-center mb-10">At <strong>Tutor4Study</strong>, we make getting help easy, fast, and stress-free. Our streamlined process ensures that you can start learning in no time. Here’s how it works</p>
+        <p className="max-w-4xl mx-auto text-center mb-10">At <strong>Tutor4Study</strong>, we make getting help easy, fast, and stress-free. Our streamlined process ensures that you can start learning in no time. Here&lsquo;s how it works</p>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           <div className="bg-semiblueviolet p-6 rounded-lg shadow-lg">
             <div className=" flex flex-col items-center mb-4 gap-3">
@@ -34,7 +34,7 @@ const HowItWorks = () => {
               <h3 className="text-xl font-bold text-gray-800">Schedule a Session</h3>
             </div>
             <p className="text-gray-600 text-center">
-              Pick a time that works for you from our flexible scheduling options. Whether it’s a one-off session or ongoing help, you can schedule it at your convenience—no need to leave your home.
+              Pick a time that works for you from our flexible scheduling options. Whether it&lsquo;s a one-off session or ongoing help, you can schedule it at your convenience—no need to leave your home.
             </p>
           </div>
 
@@ -44,7 +44,7 @@ const HowItWorks = () => {
               <h3 className="text-xl font-bold text-gray-800">Learn and Improve</h3>
             </div>
             <p className="text-gray-600 text-center">
-              Our online platform allows you to interact with your tutor in real-time through video, shared screens, and interactive whiteboards. You’ll receive immediate feedback, personalized tips, and explanations that make complex topics easy to understand.
+              Our online platform allows you to interact with your tutor in real-time through video, shared screens, and interactive whiteboards. You&lsquo;ll receive immediate feedback, personalized tips, and explanations that make complex topics easy to understand.
             </p>
           </div>
 
@@ -54,7 +54,7 @@ const HowItWorks = () => {
               <h3 className="text-xl font-bold text-gray-800">Track Your Progress</h3>
             </div>
             <p className="text-gray-600 text-center">
-              After each session, you’ll receive a summary of what was covered, as well as recommendations for further improvement. We help you stay on track with your academic goals, one step at a time.
+              After each session, you&lsquo;ll receive a summary of what was covered, as well as recommendations for further improvement. We help you stay on track with your academic goals, one step at a time.
             </p>
           </div>
         </div>

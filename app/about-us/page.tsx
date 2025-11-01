@@ -4,7 +4,7 @@ import React, { useEffect, useState, useRef, FC } from 'react';
 import Image from 'next/image';
 import dynamic from 'next/dynamic';
 import studyImg from '@/public/assets/about-page/3.jpg';
-import { GraduationCap, Gem, Medal, Code } from 'lucide-react';
+import { Star, Clock, Wallet, UserCheck,Code,Medal,GraduationCap } from 'lucide-react';
 import { FaBullseye, FaEye } from 'react-icons/fa';
 
 const Bullseye = FaBullseye as React.FC<React.SVGProps<SVGSVGElement>>;
@@ -18,6 +18,8 @@ const Testimonial = dynamic(() => import('@/app/components/Testimonials/index'),
 const Intaerested = dynamic(() => import('@/app/components/Enrollment/index'), { ssr: false });
 // Dynamic import of Intaerested component (carousel) client-side only
 const Partners = dynamic(() => import('@/app/components/Companies/index'), { ssr: false });
+const HowItWorks = dynamic(() => import('@/app/components/HowItWorks/index'), { ssr: false });
+const WhyOnlineTutoringWorks = dynamic(() => import('@/app/components/WhyOnlineTutoringWorks/index'), { ssr: false });
 
 // -----------------------------------
 // Values Section Icons & Data
@@ -29,10 +31,10 @@ interface ValueItem {
 }
 
 const values: ValueItem[] = [
-  { icon: Medal, title: 'Leadership', description: 'Fully committed to the success company' },
-  { icon: GraduationCap, title: 'Responsibility', description: 'Students will always be our top priority' },
-  { icon: Gem, title: 'Flexibility', description: 'The ability to switch is an important skills' },
-  { icon: Code, title: 'Solve the problem', description: 'Code your way to a solution' },
+ { icon: Star, title: 'Expert Tutors', description: 'Expert tutors with specialized knowledge' },
+{ icon: Clock, title: '24/7 Support', description: '24/7 availability, so you can get help whenever you need it' },
+{ icon: Wallet, title: 'Affordable Plans', description: 'Flexible pricing options to suit every budget' },
+{ icon: UserCheck, title: 'Personalized Learning', description: 'A personalized approach to every student’s needs' },
 ];
 
 // -----------------------------------
@@ -100,13 +102,15 @@ const SkillsSection: FC = () => {
           <div className="bg-paleblue p-6 rounded-xl shadow-md lg:text-left text-center lg:h-[665px] h-full">
             <div className="space-y-6">
               <h2 className="text-3xl md:text-4xl font-bold leading-snug">
-                Get the skills you need for a{' '}
-                <span className="text-blue-500">job that is in demand.</span>
+                Welcome to {' '}
+                <span className="text-blue-500">Tutor4Study </span>
               </h2>
               <p className="text-gray-600">
-                The modern StudyNotion dictates its own terms. Today, to be a
-                competitive specialist requires more than professional skills.
+               At <strong>Tutor4Study</strong>, we believe every student deserves personalized, top-quality tutoring. Whether you're tackling tough homework, preparing for important exams, or looking to boost your grades, our experienced tutors are here to help.
               </p>
+              <h2 className="text-xl  font-bold leading-snug">
+               Why Choose Tutor4Study
+              </h2>
             </div>
 
             {/* Skills List */}
@@ -176,7 +180,7 @@ const SkillsSection: FC = () => {
             <Bullseye className="text-4xl text-orange-600 mb-4" />
             <h2 className="text-2xl font-bold mb-3 text-slate-900">Our Mission</h2>
             <p className="text-slate-600">
-              Empower educators and learners through intelligent tools and personalized education systems.
+             To provide accessible, affordable, and effective tutoring that works around your schedule. With just a few clicks, you can connect with expert tutors in a wide range of subjects.
             </p>
           </div>
 
@@ -184,81 +188,28 @@ const SkillsSection: FC = () => {
             <Eye className="text-4xl text-orange-600 mb-4" />
             <h2 className="text-2xl font-bold mb-3 text-slate-900">Our Vision</h2>
             <p className="text-slate-600">
-              To create a globally connected education ecosystem powered by automation, innovation, and human touch.
+             We’re not just about helping you pass a test—we’re about helping you understand the material, build confidence, and develop lifelong learning skills. Let us be a part of your academic journey and help you unlock your full potential.
             </p>
           </div>
         </div>
 
-       
-
-        {/* Why Choose Us */}
-        <div className="max-w-7xl mx-auto pt-10">
-          <div className="flex flex-col">
-            <h2 className="text-3xl md:text-4xl font-semibold text-gray-900 text-center">
-              Why <span className="text-Blueviolet">Choose </span>Us
-            </h2>
-            <p className="text-gray-500 mt-3 max-w-2xl text-sm md:text-base text-center mx-auto">
-              Lorem Ipsum is simply dummy text of the printing and typesetting
-              industry. It has survived not only five centuries but also the
-              leap into electronic typesetting.
-            </p>
-
-           {/* Cards Section */}
-<div className="flex flex-col md:flex-row items-center justify-center gap-8 mt-14">
-
-  {/* Card 1 */}
-  <div className="bg-semiblueviolet w-[280px] h-[280px] rounded-2xl shadow-xl border border-white/40 transform rotate-[-6deg] hover:rotate-[-3deg] transition-all duration-300">
-    <div className="flex flex-col items-center justify-center h-full p-6 text-center">
-      <div className="bg-blue-100 p-3 rounded-full mb-3">
-        <Code className="w-8 h-8 text-blue-600" />
-      </div>
-      <h3 className="font-semibold text-lg mb-2">Know Your Progress</h3>
-      <p className="text-gray-500 text-sm">
-        Track your learning journey and see your achievements in real-time.
-      </p>
-    </div>
-  </div>
-
-  {/* Card 2 */}
-  <div className="bg-semiblueviolet w-[280px] h-[280px] rounded-2xl shadow-xl border border-white/40 transform rotate-[3deg] hover:rotate-0 transition-all duration-300">
-    <div className="flex flex-col items-center justify-center h-full p-6 text-center">
-      <div className="bg-purple-100 p-3 rounded-full mb-3">
-        <Medal className="w-8 h-8 text-purple-600" />
-      </div>
-      <h3 className="font-semibold text-lg mb-2">Compare with Others</h3>
-      <p className="text-gray-500 text-sm">
-        Benchmark your progress and stay motivated alongside your peers.
-      </p>
-    </div>
-  </div>
-
-  {/* Card 3 */}
-  <div className="bg-semiblueviolet w-[280px] h-[280px] rounded-2xl shadow-xl border border-white/40 transform rotate-[-3deg] hover:rotate-0 transition-all duration-300">
-    <div className="flex flex-col items-center justify-center h-full p-6 text-center">
-      <div className="bg-yellow-100 p-3 rounded-full mb-3">
-        <GraduationCap className="w-8 h-8 text-yellow-600" />
-      </div>
-      <h3 className="font-semibold text-lg mb-2">Plan Your Lessons</h3>
-      <p className="text-gray-500 text-sm">
-        Organize your learning schedule and reach your goals efficiently.
-      </p>
-    </div>
-  </div>
-
-</div>
-
-          </div>
+        <div className="">
+          < HowItWorks/>
         </div>
+
          {/* Carousel / Mentors */}
-        <div className="pt-20">
+        <div className="pt-2">
           <Team />
+        </div>
+        <div className="pt-2">
+        <WhyOnlineTutoringWorks/>
         </div>
          {/* Testimonials */}
         <div className="">
           < Testimonial/>
         </div>
         {/* Newsletter */}
-        <div className="pt-2">
+        <div className="">
           < Intaerested/>
         </div>
          {/* Partners */}

@@ -47,13 +47,28 @@ const Footer: React.FC = () => {
                 </Link>
               </li>
               <li>
-                <Link href="/courses" className="hover:font-semibold transition">
-                  Courses
+                <Link href="/subjects" className="hover:font-semibold transition">
+                  Subjects
+                </Link>
+              </li>
+                <li>
+                <Link href="/faqs" className="hover:font-semibold transition">
+                 FAQs
                 </Link>
               </li>
               <li>
                 <Link href="/contact-us" className="hover:font-semibold transition">
                   Contact Us
+                </Link>
+              </li>
+                <li>
+                <Link href="/terms-and-conditions" className="hover:font-semibold transition">
+                  Terms & Conditions
+                </Link>
+              </li>
+                <li>
+                <Link href="/privacy-policy" className="hover:font-semibold transition">
+                  Privacy Policy
                 </Link>
               </li>
             </ul>

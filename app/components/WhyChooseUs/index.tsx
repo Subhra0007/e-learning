@@ -6,20 +6,18 @@ import instructorImg from "@/public/assets/whychooseus/1.jpg";
 import StarSection from "@/app/components/Star/index"
 const BecomeInstructor = () => {
   return (
-      <div className="z-0  relative max-w-7xl mx-auto pt-20">
+      <div className="z-0  relative max-w-7xl mx-auto pt-10 mt-6">
           {/* Header */}
               <header className="text-center mb-12  px-6">
                  <h2 className="text-3xl md:text-4xl font-semibold text-midnightblue  text-center">
-                Why{" "}
+               Why Choose {" "}
                 <span className=" text-Blueviolet ">
-                 Choose {" "}
+                Tutor4Study{" "}
                 </span>
-                Us
               </h2>
-              <p className="text-gray-500 mt-6 max-w-2xl text-sm md:text-base text-center mx-auto ">
-               Lorem Ipsum is simply dummy text of the printing and typesetting industry. It has survived not only five centuries but also the leap into electronic typesetting.
-              </p>
-        
+              {/* <p className="text-gray-500 mt-6 max-w-3xl text-sm md:text-base text-center mx-auto ">
+               At <strong>Tutor4Study</strong>, we believe every student deserves personalized, top-quality tutoring. Whether you're tackling tough homework, preparing for important exams, or looking to boost your grades, our experienced tutors are here to help.
+              </p>  */}
               </header>
     <section className=" grid grid-cols-1 md:grid-cols-2 gap-12  text-black  px-6 pb-2">
       {/* ===== Left Image Section ===== */}
@@ -39,15 +37,13 @@ const BecomeInstructor = () => {
 
       {/* ===== Right Text Section ===== */}
       <div className=" lg:text-left text-center">
-        <h2 className="text-3xl md:text-4xl font-semibold mb-4">
-           We Build {" "}
-          <span className="text-transparent bg-clip-text bg-Blueviolet">
-            Digital Success
-          </span>
-        </h2>
-        <p className="text-gray-400 mb-4 text-sm md:text-base leading-relaxed">
-          Our mission is to empower brands through innovative digital strategies and cutting-edge technology.
-        </p>
+       <ul className="list-disc pl-5 text-gray-400 text-sm md:text-base leading-relaxed mb-2 space-y-1">
+  <li>Expert tutors with specialized knowledge</li>
+  <li>24/7 availability, so you can get help whenever you need it</li>
+  <li>Flexible pricing options to suit every budget</li>
+  <li>A personalized approach to every student’s needs</li>
+</ul>
+
          <Link href="/about-us">
         <button className="bg-semiblueviolet hover:bg-Blueviolet text-Blueviolet hover:text-white font-medium px-5 py-3 rounded-full inline-flex items-center gap-2 transition">
           About Us

@@ -16,41 +16,27 @@ interface DataType {
 
 const postData: DataType[] = [
   {
-    name: "Robert Fox",
-    profession: "CEO, Parkview Int.Ltd",
+    name: "Sarah L.",
+    profession: "High School Student",
     comment:
-      "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour",
+      "I was struggling with Algebra, but after just a few sessions with my tutor, I not only understood the material but was able to score an A on my next test. The personalized attention I received made all the difference. Highly recommend!",
     imgSrc:"/assets/testimonial/image5.svg" ,
   },
   {
-    name: "Leslie Alexander",
-    profession: "CEO, Parkview Int.Ltd",
+    name: "James D.",
+    profession: "College Bound Senior",
     comment:
-      "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour",
-    imgSrc: "/assets/testimonial/image4.svg",
-  },
-  {
-    name: "Cody Fisher",
-    profession: "CEO, Parkview Int.Ltd",
-    comment:
-      "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour",
+      "The SAT prep was so helpful! My tutor helped me improve my score by 200 points in just a month. I’m so grateful to have found Tutor4Study—it was the best investment I could make in my future.",
     imgSrc: "/assets/testimonial/images3.svg",
   },
   {
-    name: "Robert Fox",
-    profession: "CEO, Parkview Int.Ltd",
+    name: "Emily T ",
+    profession: "College Student",
     comment:
-      "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour",
-    imgSrc: "/assets/testimonial/image6.svg",
+      "I used Tutor4Study to get help with my college chemistry class. The tutor explained the material in a way that made sense, and I saw my grades improve immediately. I feel so much more confident in my studies now.",
+    imgSrc: "/assets/testimonial/image4.svg",
   },
-  {
-    name: "Leslie Alexander",
-    profession: "CEO, Parkview Int.Ltd",
-    comment:
-      "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour",
-    imgSrc: "/assets/testimonial/image7.svg",
-  },
-  
+ 
 ];
 
 // ======================
@@ -107,7 +93,8 @@ export default class MultipleItems extends Component {
        <div className="mx-auto max-w-7xl px-6">
       <div className="pt-20 " id="testimonial">
        
-            <h3 className="mb-5 text-3xl md:text-4xl font-semibold text-gray-900 text-center">Testimonials</h3>
+            <h3 className="mb-5 text-3xl md:text-4xl font-semibold text-gray-900 text-center">Hear From Our <span ></span>Students </h3>
+            <p className="mt-4 text-center">Here’s what our students have to say about their experiences with Tutor4Study</p>
           <Slider {...settings} className="py-6">
             {postData.map((items, i) => (
               <div key={i} className="px-4 py-4">
@@ -142,13 +129,13 @@ export default class MultipleItems extends Component {
                         {items.profession}
                       </h3>
                     </div>
-                    <div className="flex">
+                    {/* <div className="flex">
                       <StarIcon width={20} className="text-gold" />
                       <StarIcon width={20} className="text-gold" />
                       <StarIcon width={20} className="text-gold" />
                       <StarIcon width={20} className="text-gold" />
                       <StarIcon width={20} className="text-lightgray" />
-                    </div>
+                    </div> */}
                   </div>
                 </div>
               </div>

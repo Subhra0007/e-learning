@@ -96,7 +96,7 @@ export default function MultipleItems(): JSX.Element | null {
   };
 
   return (
-    <div className="max-w-7xl mx-auto px-6 pt-20">
+    <div className="max-w-7xl mx-auto px-6 pt-10 mt-7">
       <h2 className="text-3xl md:text-4xl font-semibold text-gray-900 text-center mb-10">
         Meet Our <span className="text-Blueviolet">Mentors</span>
       </h2>

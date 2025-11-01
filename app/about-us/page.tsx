@@ -34,7 +34,7 @@ const values: ValueItem[] = [
  { icon: Star, title: 'Expert Tutors', description: 'Expert tutors with specialized knowledge' },
 { icon: Clock, title: '24/7 Support', description: '24/7 availability, so you can get help whenever you need it' },
 { icon: Wallet, title: 'Affordable Plans', description: 'Flexible pricing options to suit every budget' },
-{ icon: UserCheck, title: 'Personalized Learning', description: '•	A personalized approach to every student’s needs' },
+{ icon: UserCheck, title: 'Personalized Learning', description: 'A personalized approach to every student’s needs' },
 ];
 
 // -----------------------------------

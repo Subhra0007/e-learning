@@ -13,7 +13,7 @@ export default class MultipleItems extends Component {
             <h3 className="text-midnightblue text-3xl lg:text-4xl font-semibold text-center">
               Our <span className="text-Blueviolet">Subjects</span>
             </h3>
-           <p className="text-center mt-5">At Tutor4Study, we cover a broad range of subjects, so no matter where you need support, we have an expert ready to help. Whether you&apos;re looking for help with middle school math or advanced college-level courses, we&apos;ve got you covered.</p>
+           <p className="text-center mt-5">At <strong>Tutor4Study</strong>, we cover a broad range of subjects, so no matter where you need support, we have an expert ready to help. Whether you&apos;re looking for help with middle school math or advanced college-level courses, we&apos;ve got you covered.</p>
           </div>
 
           {/* Grid Layout - Replaces Slider */}

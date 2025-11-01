@@ -108,9 +108,9 @@ const SkillsSection: FC = () => {
               <p className="text-gray-600">
                At <strong>Tutor4Study</strong>, we believe every student deserves personalized, top-quality tutoring. Whether you&lsquo;re tackling tough homework, preparing for important exams, or looking to boost your grades, our experienced tutors are here to help.
               </p>
-              <h2 className="text-xl  font-bold leading-snug">
+              {/* <h2 className="text-xl  font-bold leading-snug">
                Why Choose Tutor4Study
-              </h2>
+              </h2> */}
             </div>
 
             {/* Skills List */}

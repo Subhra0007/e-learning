@@ -3,7 +3,7 @@ import Slider from "react-slick";
 import React, { Component } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { StarIcon } from "@heroicons/react/24/solid";
+
 
 export default class MultipleItems extends Component {
   render() {
@@ -70,14 +70,6 @@ export default class MultipleItems extends Component {
                         <p><strong>Statistics:</strong> {" "}Analyze data, work with probability, and understand statistical concepts.</p>
                       </div>
                     </div>
-                    {/* <div className="flex items-center gap-3 mt-2">
-                      <h3 className="text-xl font-bold">4.8</h3>
-                      <div className="flex">
-                        {[...Array(5)].map((_, i) => (
-                          <StarIcon key={i} className={`h-5 w-5 text-gold`} />
-                        ))}
-                      </div>
-                    </div> */}
                   </div>
 
                   {/* Right - image */}
@@ -94,7 +86,6 @@ export default class MultipleItems extends Component {
                 </div>
 
                 <div className="flex justify-between items-center mt-6 pt-4">
-                  {/* <h3 className="text-3xl font-bold text-gray-900">₹4999</h3> */}
                   <Link href="/contact-us">
                     <button className="bg-blue-600 hover:bg-semiblueviolet border border-lightgray text-Blueviolet font-semibold px-6 py-2 rounded-xl shadow-md transition">
                       Enroll Now
@@ -118,14 +109,6 @@ export default class MultipleItems extends Component {
                         <p><strong>Environmental Science:</strong> {" "}Explore ecosystems, climate change, and sustainability.</p>
                       </div>
                     </div>
-                    {/* <div className="flex items-center gap-3 mt-2">
-                      <h3 className="text-xl font-bold">4.5</h3>
-                      <div className="flex">
-                        {[...Array(5)].map((_, i) => (
-                          <StarIcon key={i} className={`h-5 w-5 text-gold`} />
-                        ))}
-                      </div>
-                    </div> */}
                   </div>
 
                   {/* Right - image */}
@@ -142,7 +125,6 @@ export default class MultipleItems extends Component {
                 </div>
 
                 <div className="flex justify-between items-center mt-6 pt-4">
-                  {/* <h3 className="text-3xl font-bold text-gray-900">₹3999</h3> */}
                   <Link href="/contact-us">
                     <button className="bg-blue-600 hover:bg-semiblueviolet border border-lightgray text-Blueviolet font-semibold px-6 py-2 rounded-xl shadow-md transition">
                       Enroll Now
@@ -165,14 +147,6 @@ export default class MultipleItems extends Component {
                         <p><strong>Test Prep:</strong> {" "}Get expert guidance for SAT, ACT, and other standardized tests.</p>
                       </div>
                     </div>
-                    {/* <div className="flex items-center gap-3 mt-2">
-                      <h3 className="text-xl font-bold">4.7</h3>
-                      <div className="flex">
-                        {[...Array(5)].map((_, i) => (
-                          <StarIcon key={i} className={`h-5 w-5 text-gold`} />
-                        ))}
-                      </div>
-                    </div> */}
                   </div>
 
                   {/* Right - image */}
@@ -213,14 +187,6 @@ export default class MultipleItems extends Component {
                         
                       </div>
                     </div>
-                    {/* <div className="flex items-center gap-3 mt-2">
-                      <h3 className="text-xl font-bold">4.9</h3>
-                      <div className="flex">
-                        {[...Array(5)].map((_, i) => (
-                          <StarIcon key={i} className={`h-5 w-5 text-gold`} />
-                        ))}
-                      </div>
-                    </div> */}
                   </div>
 
                   {/* Right - image */}
@@ -237,7 +203,6 @@ export default class MultipleItems extends Component {
                 </div>
 
                 <div className="flex justify-between items-center mt-6 pt-4">
-                  {/* <h3 className="text-3xl font-bold text-gray-900">₹5999</h3> */}
                   <Link href="/contact-us">
                     <button className="bg-blue-600 hover:bg-semiblueviolet border border-lightgray text-Blueviolet font-semibold px-6 py-2 rounded-xl shadow-md transition">
                       Enroll Now

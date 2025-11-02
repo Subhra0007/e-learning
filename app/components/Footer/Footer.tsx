@@ -79,9 +79,6 @@ const Footer: React.FC = () => {
             <h3 className="text-xl font-bold mb-3 text-Blueviolet">Connect Us</h3>
             <ul className="space-y-2 text-black text-sm sm:text-base">
               <li>
-                {/* <a href="mailto:xyz@gmail.com" className="hover:text-gray-400 transition">
-                  xyz@gmail.com
-                </a> */}
               </li>
               <li>
                 <a href="mailto:tutor4study24x7@gmail.com" className="hover:text-gray-400 transition">

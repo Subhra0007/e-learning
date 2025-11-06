@@ -339,6 +339,7 @@ const ContactUs: React.FC = () => {
   };
 
   return (
+    <>
     <section className="relative bg-slate-100 text-black px-6 pt-10 overflow-hidden lg:px-0 max-w-7xl mx-auto">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 ">
         <ContactForm
@@ -350,9 +351,13 @@ const ContactUs: React.FC = () => {
         />
         <ContactInfo />
       </div>
-      <FAQ/>
-      <hr />
     </section>
+     <FAQ/>
+           <div className="max-w-7xl mx-auto px-6">
+                 <hr />
+           </div>
+            
+          </>
   );
 };
 

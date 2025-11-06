@@ -7,6 +7,7 @@ import FAQ from "../components/FAQ/index";
 export default class MultipleItems extends Component {
   render() {
     return (
+      <>
       <div className="mx-auto max-w-7xl px-6 pt-5">
         <div id="courses">
           <div className=" mb-8 mx-auto max-w-4xl">
@@ -163,9 +164,14 @@ export default class MultipleItems extends Component {
        
         </div>
         
-        <FAQ/>
-         <hr />
+       
       </div>
+       <FAQ/>
+       <div className="max-w-7xl mx-auto px-6">
+             <hr />
+       </div>
+        
+      </>
     );
   }
 }

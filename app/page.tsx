@@ -16,7 +16,11 @@ export default function Home() {
       <Mentor />
       <Testimonials />
       <Enrollment />
-      <FAQ/>
+         <FAQ/>
+         <div className='max-w-7xl mx-auto px-6'>
+           <hr/>  
+      </div>
+     
     </main>
   )
 }

@@ -46,7 +46,7 @@ export default class MultipleItems extends Component {
               Our <span className="text-Blueviolet">Subjects</span>
             </h3>
             <Link
-              href="/courses"
+              href="/subjects"
               className="text-Blueviolet lg:text-lg text-sm font-medium hover:text-blue-600 transition-colors duration-300"
             >
               Explore Subjects&nbsp;&gt;

@@ -3,7 +3,7 @@ import React, { Component } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { StarIcon } from "@heroicons/react/24/solid";
-
+import FAQ from "../components/FAQ/index";
 export default class MultipleItems extends Component {
   render() {
     return (
@@ -162,6 +162,9 @@ export default class MultipleItems extends Component {
           </div>
        
         </div>
+        
+        <FAQ/>
+         <hr />
       </div>
     );
   }

@@ -17,7 +17,7 @@ const Testimonial = dynamic(() => import('@/app/components/Testimonials/index'),
 // Dynamic import of Intaerested component (carousel) client-side only
 const Intaerested = dynamic(() => import('@/app/components/Enrollment/index'), { ssr: false });
 // Dynamic import of Intaerested component (carousel) client-side only
-const Partners = dynamic(() => import('@/app/components/Companies/index'), { ssr: false });
+const FAQ = dynamic(() => import('@/app/components/FAQ/index'), { ssr: false });
 const HowItWorks = dynamic(() => import('@/app/components/HowItWorks/index'), { ssr: false });
 const WhyOnlineTutoringWorks = dynamic(() => import('@/app/components/WhyOnlineTutoringWorks/index'), { ssr: false });
 
@@ -214,10 +214,11 @@ const SkillsSection: FC = () => {
         <div className="">
           < Intaerested/>
         </div>
-         {/* Partners */}
-        <div className="">
-          < Partners/>
+        <FAQ/>
+        <div className='max-w-7xl mx-auto px-6'>
+           <hr />
         </div>
+        
      </div>
   );
 };

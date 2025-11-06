@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState, FormEvent } from "react";
+import FAQ from "../components/FAQ/index";
 import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/style.css";
 import {
@@ -37,7 +38,7 @@ interface FormData {
   email: string;
   countryCode: string;
   contact: string;
-  courses: string;
+  subjects: string;
   message: string;
 }
 
@@ -172,22 +173,19 @@ const ContactForm: React.FC<{
 </div>
 
 
-        {/* Courses */}
+        {/* Subjects */}
         <select
-          name="courses"
-          value={formData.courses}
+          name="Subjects"
+          value={formData.subjects}
           onChange={(e) =>
-            setFormData((prev) => ({ ...prev, courses: e.target.value }))
+            setFormData((prev) => ({ ...prev, subjects: e.target.value }))
           }
           className="w-full p-3 rounded bg-gray-200 text-black focus:ring-2 focus:ring-Blueviolet outline-none placeholder-gray-700"
         >
-          <option>Complete Digital Marketing Course</option>
-          <option>UX Design Thinking for Beginners</option>
-          <option>30 Days Weight Loss Yoga & Fitness Course</option>
-          <option>Learn JavaScript – Full Course for Beginners</option>
-          <option>Mastering SEO for 2025</option>
-          <option>Advanced React & Next.js Development</option>
-          <option>Content Writing Masterclass</option>
+          <option>Math Tutoring</option>
+          <option>Science Tutoring</option>
+          <option>English & Language Arts</option>
+          <option>Test Preparation</option>
         </select>
 
         {/* Message */}
@@ -291,7 +289,7 @@ const ContactUs: React.FC = () => {
     email: "",
     countryCode: "+91",
     contact: "",
-    courses: "Complete Digital Marketing Course",
+    subjects: "Math Tutoring",
     message: "",
   });
 
@@ -326,7 +324,7 @@ const ContactUs: React.FC = () => {
           email: "",
           countryCode: "+91",
           contact: "",
-          courses: "Complete Digital Marketing Course",
+          subjects: "Math Tutoring",
           message: "",
         });
       } else {
@@ -342,7 +340,7 @@ const ContactUs: React.FC = () => {
 
   return (
     <section className="relative bg-slate-100 text-black px-6 pt-10 overflow-hidden lg:px-0 max-w-7xl mx-auto">
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-10 pb-3">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 ">
         <ContactForm
           formData={formData}
           setFormData={setFormData}
@@ -352,6 +350,7 @@ const ContactUs: React.FC = () => {
         />
         <ContactInfo />
       </div>
+      <FAQ/>
       <hr />
     </section>
   );

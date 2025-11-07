@@ -36,7 +36,7 @@ const Drawer = ({ children, isOpen, setIsOpen }: DrawerProps) => {
               }}
             >
               <Image
-                className="h-10 cursor-pointer"
+                className="h-12 w-auto cursor-pointer"
                 src={Logo}
                 alt="Logo"
                  width={60}

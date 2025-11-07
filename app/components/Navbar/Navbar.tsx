@@ -38,7 +38,7 @@ const Navbar = () => {
                             alt="Logo"
                             width={60}
                             height={60}
-                            className="h-10 w-auto block lg:hidden"
+                            className="h-12 w-auto block lg:hidden"
                             priority
                           />
                         </Link>
@@ -48,7 +48,7 @@ const Navbar = () => {
                             alt="Logo"
                             width={60}
                             height={60}
-                            className="h-10 w-auto hidden  lg:block"
+                            className="h-12 w-auto hidden  lg:block"
                             priority
                           />
                         </Link>
